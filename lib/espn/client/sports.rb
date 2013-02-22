@@ -10,8 +10,8 @@ module ESPN
       #
       # @example
       #   ESPN.sports()
-      def sports(opts={})
-        get("/sports", {}, false, false)
+      def sports(options={})
+        get("/sports", options)
       end
 
     end
