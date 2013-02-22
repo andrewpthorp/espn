@@ -14,7 +14,7 @@ module ESPN
         url: api_url
       }
 
-      options.merge!(params: { api_key: api_key }) if authed?
+      options.merge!(params: { apikey: api_key }) if authed?
 
       connection = Faraday.new(options) do |builder|
         builder.request :url_encoded
