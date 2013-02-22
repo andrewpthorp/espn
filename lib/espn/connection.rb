@@ -6,7 +6,7 @@ module ESPN
   module Connection
     private
 
-    def connection(raw=false)
+    def connection
 
       options = {
         proxy: proxy,
@@ -20,10 +20,8 @@ module ESPN
         builder.request :url_encoded
 
         builder.use Faraday::Response::RaiseESPNError
-        unless raw
-          builder.use FaradayMiddleware::Mashify
-          builder.use FaradayMiddleware::ParseJson
-        end
+        builder.use FaradayMiddleware::Mashify
+        builder.use FaradayMiddleware::ParseJson
 
         builder.adapter adapter
       end

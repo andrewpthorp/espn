@@ -9,7 +9,7 @@ module ESPN
     private
 
     def request(method, path, options)
-      response = connection(raw).send(method) do |request|
+      response = connection.send(method) do |request|
         request.url(path, options)
         request.options[:timeout] = timeout
         request.options[:open_timeout] = open_timeout
