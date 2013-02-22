@@ -14,6 +14,8 @@ module ESPN
         request.options[:timeout] = timeout
         request.options[:open_timeout] = open_timeout
       end
+
+      response.body.response
     end
 
   end
