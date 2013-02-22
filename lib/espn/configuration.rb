@@ -13,7 +13,7 @@ module ESPN
       :user_agent].freeze
 
     DEFAULT_ADAPTER         = Faraday.default_adapter
-    DEFAULT_API_VERSION     = 2
+    DEFAULT_API_VERSION     = 1
     DEFAULT_USER_AGENT      = "ESPN Ruby Gem #{ESPN::VERSION}".freeze
     DEFAULT_TIMEOUT         = 10
 
