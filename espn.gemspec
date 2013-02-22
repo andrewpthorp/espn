@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-require File.expand_path('../lib/tumbl_rb/version', __FILE__)
+require File.expand_path('../lib/espn/version', __FILE__)
 
 Gem::Specification.new do |s|
   s.name        = 'espn'
@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.email       = ['andrewpthorp@gmail.com']
   s.homepage    = 'http://github.com/andrewpthorp/espn'
   s.description = %q{Simple wrapper for the ESPN v1 API.}
-  s.summary     = spec.description
+  s.summary     = s.description
 
   s.add_runtime_dependency 'addressable', '~> 2.2'
   s.add_runtime_dependency 'faraday', '~> 0.8'
@@ -28,6 +28,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'markdown'
 
   s.files         = `git ls-files`.split("\n")
-  s.test_files    = `git ls-files -- {spec}/*`.split("\n")
+  s.test_files    = Dir.glob("spec/**/*")
   s.require_paths = ["lib"]
 end

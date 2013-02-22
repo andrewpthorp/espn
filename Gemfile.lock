@@ -1,0 +1,65 @@
+PATH
+  remote: .
+  specs:
+    espn (0.0.1)
+      addressable (~> 2.2)
+      faraday (~> 0.8)
+      faraday_middleware (~> 0.8)
+      hashie (~> 1.2)
+      multi_json (~> 1.3)
+      oauth (~> 0.4)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    addressable (2.3.3)
+    crack (0.3.2)
+    diff-lcs (1.1.3)
+    faraday (0.8.5)
+      multipart-post (~> 1.1)
+    faraday_middleware (0.9.0)
+      faraday (>= 0.7.4, < 0.9)
+    hashie (1.2.0)
+    json (1.7.7)
+    kramdown (0.14.2)
+    logutils (0.3.0)
+    markdown (1.0.0)
+      kramdown (>= 0.13.7)
+      props (>= 1.0.0)
+      textutils (>= 0.2.0)
+    multi_json (1.6.1)
+    multipart-post (1.1.5)
+    oauth (0.4.7)
+    props (1.0.0)
+    rake (10.0.3)
+    rspec (2.12.0)
+      rspec-core (~> 2.12.0)
+      rspec-expectations (~> 2.12.0)
+      rspec-mocks (~> 2.12.0)
+    rspec-core (2.12.2)
+    rspec-expectations (2.12.1)
+      diff-lcs (~> 1.1.3)
+    rspec-mocks (2.12.2)
+    simplecov (0.7.1)
+      multi_json (~> 1.0)
+      simplecov-html (~> 0.7.1)
+    simplecov-html (0.7.1)
+    textutils (0.4.0)
+      logutils (>= 0.3.0)
+    webmock (1.9.3)
+      addressable (>= 2.2.7)
+      crack (>= 0.3.2)
+    yard (0.8.4.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  espn!
+  json
+  markdown
+  rake
+  rspec
+  simplecov
+  webmock
+  yard
