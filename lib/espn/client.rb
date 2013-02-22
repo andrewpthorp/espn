@@ -1,6 +1,5 @@
 require 'espn/connection'
 require 'espn/request'
-require 'espn/blog'
 
 module ESPN
 
