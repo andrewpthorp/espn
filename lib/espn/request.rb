@@ -18,6 +18,7 @@ module ESPN
       options.delete(:headline_id)
       options.delete(:method)
       options.delete(:section)
+      options.delete(:athlete_id)
 
       response = connection.send(method) do |request|
         request.url(path, options)
