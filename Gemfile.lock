@@ -46,6 +46,7 @@ GEM
     simplecov-html (0.7.1)
     textutils (0.4.0)
       logutils (>= 0.3.0)
+    vcr (2.5.0)
     webmock (1.9.3)
       addressable (>= 2.2.7)
       crack (>= 0.3.2)
@@ -61,5 +62,6 @@ DEPENDENCIES
   rake
   rspec
   simplecov
+  vcr
   webmock
   yard
