@@ -1,3 +1,6 @@
 module ESPN
-  VERSION = "0.0.1" unless defined?(ESPN::VERSION)
+
+  # Public: The version of the ESPN gem.
+  VERSION = '0.0.1'.freeze
+
 end

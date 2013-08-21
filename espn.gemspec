@@ -3,7 +3,7 @@ require File.expand_path('../lib/espn/version', __FILE__)
 
 Gem::Specification.new do |s|
   s.name        = 'espn'
-  s.version     = ESPN::VERSION
+  s.version     = ESPN::VERSION.dup
   s.platform    = Gem::Platform::RUBY
 
   s.authors     = ['Andrew Thorp']
