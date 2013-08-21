@@ -9,6 +9,13 @@ module ESPN
     private
 
     def request(method, path, options)
+
+      # TODO: Decide if I want to delete these or not. There is probably
+      # a better way to do this, if so, by filtering them out.
+      options.delete(:sports_name)
+      options.delete(:league_name)
+      options.delete(:team_id)
+
       response = connection.send(method) do |request|
         request.url(path, options)
         request.options[:timeout] = timeout
