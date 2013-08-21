@@ -11,7 +11,7 @@ module ESPN
       #
       # Returns an Array of Hashie::Mash.
       def teams(opts={})
-        url = "sports"
+        url = 'sports'
 
         unless opts[:sport].to_s.empty?
           url += "/#{opts[:sport]}"
@@ -20,7 +20,7 @@ module ESPN
           end
         end
 
-        url += "/teams"
+        url += '/teams'
 
         unless opts[:team_id].to_s.empty?
           url += "/#{opts[:team_id]}"
