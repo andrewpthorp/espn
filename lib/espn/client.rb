@@ -5,25 +5,33 @@ require 'espn/client/sports'
 module ESPN
 
   class Client
+
+    # Public: An attr_accessor for each configuration option.
     attr_accessor(*Configuration::VALID_OPTIONS_KEYS)
 
-    def initialize(options={})
-      options = ESPN.options.merge(options)
+    # Public: Initialize a new Client. To see all options that can be
+    # configured, look at the Configuration module, specifically
+    # VALID_OPTIONS_KEYS.
+    #
+    # opts  - A Hash of configuration options.
+    def initialize(opts={})
+      options = ESPN.options.merge(opts)
       Configuration::VALID_OPTIONS_KEYS.each do |key|
         send("#{key}=", options[key])
       end
     end
 
-    # Provides the URL for accessing the API
+    # Public: Get the base URL for accessing the ESPN API.
     #
-    # @return [String]
+    # Returns a String.
     def api_url
       "http://api.espn.com/v1"
     end
 
-    # Determine if an api_key has been set
+    # Public: Determine if the ESPN::Client has been authenticated. At this
+    # point, we are just checking to see if an :api_key has been set.
     #
-    # @return [Boolean]
+    # Returns a Boolean.
     def authed?
       !api_key.nil?
     end
