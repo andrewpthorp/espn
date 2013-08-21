@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe ESPN::Client::Sports do
+describe ESPN::Client::Teams do
   before do
     @client = ESPN::Client.new
   end
