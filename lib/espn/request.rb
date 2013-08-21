@@ -12,8 +12,8 @@ module ESPN
 
       # TODO: Decide if I want to delete these or not. There is probably
       # a better way to do this, if so, by filtering them out.
-      options.delete(:sports_name)
-      options.delete(:league_name)
+      options.delete(:sport)
+      options.delete(:league)
       options.delete(:team_id)
 
       response = connection.send(method) do |request|
