@@ -46,9 +46,9 @@ describe ESPN::Client::Headlines do
 
     context 'with a method param' do
       it 'should include the method in the request' do
-        stub_get('sports/news/top')
+        stub_get('sports/news/headlines/top')
         @client.headlines(method: 'top')
-        assert_requested :get, espn_url('sports/news/top')
+        assert_requested :get, espn_url('sports/news/headlines/top')
       end
     end
 

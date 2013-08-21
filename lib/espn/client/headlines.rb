@@ -25,12 +25,14 @@ module ESPN
         url += '/news'
 
         unless opts[:method].to_s.empty?
-          url += "/#{opts[:method]}"
+          url += "/headlines/#{opts[:method]}"
         end
 
         unless opts[:headline_id].to_s.empty?
           url += "/#{opts[:headline_id]}"
         end
+
+        puts url
 
         get(url, opts)
       end
