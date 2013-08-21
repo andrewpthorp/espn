@@ -13,24 +13,24 @@ describe ESPN::Client::Sports do
       assert_requested :get, espn_url('sports')
     end
 
-    context 'with a sports' do
-      it 'gets all sports for that name' do
+    context 'with a sport param' do
+      it 'should include the sport param in the request' do
         stub_get('sports/baseball')
         @client.sports(sport: 'baseball')
         assert_requested :get, espn_url('sports/baseball')
       end
     end
 
-    context 'with a sports and a league' do
-      it 'gets all sports for that sport and league' do
+    context 'with a sport and a league param' do
+      it 'should include both params in the request' do
         stub_get('sports/baseball/mlb')
         @client.sports(sport: 'baseball', league: 'mlb')
         assert_requested :get, espn_url('sports/baseball/mlb')
       end
     end
 
-    context 'with a league and no sports' do
-      it 'gets all sports' do
+    context 'with a league param but no sport param' do
+      it 'should not include the league param in the request' do
         stub_get('sports')
         @client.sports(league: 'mlb')
         assert_requested :get, espn_url('sports')

@@ -2,6 +2,7 @@ require 'espn/connection'
 require 'espn/request'
 require 'espn/client/sports'
 require 'espn/client/teams'
+require 'espn/client/headlines'
 
 module ESPN
 
@@ -41,6 +42,7 @@ module ESPN
     include ESPN::Request
     include ESPN::Client::Sports
     include ESPN::Client::Teams
+    include ESPN::Client::Headlines
 
   end
 
