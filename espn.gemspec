@@ -27,7 +27,10 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'yard'
   s.add_development_dependency 'markdown'
 
-  s.files         = `git ls-files`.split("\n")
+  s.files = %w(LICENSE.md README.md espn.gemspec)
+  s.files += Dir.glob("lib/**/*.rb")
+  s.files += Dir.glob("spec/**/*")
+
   s.test_files    = Dir.glob("spec/**/*")
   s.require_paths = ["lib"]
 end
