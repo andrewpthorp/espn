@@ -26,7 +26,7 @@ describe ESPN::Client do
 
   describe '#api_url' do
     it 'should return the correct url' do
-      @client.api_url.should eq('http://api.espn.com/v1')
+      @client.api_url.should eq('http://api.espn.com/v1/')
     end
   end
 

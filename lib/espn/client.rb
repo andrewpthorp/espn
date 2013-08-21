@@ -25,7 +25,7 @@ module ESPN
     #
     # Returns a String.
     def api_url
-      "http://api.espn.com/v1"
+      "http://api.espn.com/v1/"
     end
 
     # Public: Determine if the ESPN::Client has been authenticated. At this
