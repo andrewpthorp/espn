@@ -12,13 +12,9 @@ module ESPN
 
       # TODO: Decide if I want to delete these or not. There is probably
       # a better way to do this, if so, by filtering them out.
-      options.delete(:sport)
-      options.delete(:league)
-      options.delete(:team_id)
-      options.delete(:headline_id)
-      options.delete(:method)
-      options.delete(:section)
-      options.delete(:athlete_id)
+      %w(sport league method section team_id headline_id athlete_id event_id).each do |k|
+        options.delete(k.to_sym)
+      end
 
       response = connection.send(method) do |request|
         request.url(path, options)
