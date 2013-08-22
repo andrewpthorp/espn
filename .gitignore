@@ -1,4 +1,9 @@
+.DS_Store
 .rbenv-gemsets
 .ruby-version
 *.gem
 samples/*
+Gemfile.lock
+.yardoc
+_yardoc
+doc/
