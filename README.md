@@ -3,6 +3,7 @@
 Simply Ruby Wrapper for the ESPN Developer API.
 
 [![Build Status](https://travis-ci.org/andrewpthorp/espn.png)](https://travis-ci.org/andrewpthorp/espn)
+[![Gem Version](https://badge.fury.io/rb/espn.png)](http://badge.fury.io/rb/espn)
 
 ## Installation
 
