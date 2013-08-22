@@ -11,6 +11,7 @@ require 'espn/client/scores'
 require 'espn/client/sports'
 require 'espn/client/standings'
 require 'espn/client/teams'
+require 'espn/client/video'
 
 module ESPN
 
@@ -58,6 +59,7 @@ module ESPN
     include ESPN::Client::Sports
     include ESPN::Client::Standings
     include ESPN::Client::Teams
+    include ESPN::Client::Video
 
   end
 
