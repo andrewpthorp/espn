@@ -1,5 +1,6 @@
 require 'espn/connection'
 require 'espn/request'
+require 'espn/mapper'
 
 require 'espn/client/athletes'
 require 'espn/client/audio'
@@ -48,7 +49,9 @@ module ESPN
     end
 
     include ESPN::Connection
+    include ESPN::Mapper
     include ESPN::Request
+
     include ESPN::Client::Athletes
     include ESPN::Client::Audio
     include ESPN::Client::Headlines
