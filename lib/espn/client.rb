@@ -3,6 +3,7 @@ require 'espn/request'
 
 require 'espn/client/athletes'
 require 'espn/client/headlines'
+require 'espn/client/notes'
 require 'espn/client/now'
 require 'espn/client/scores'
 require 'espn/client/sports'
@@ -47,6 +48,7 @@ module ESPN
     include ESPN::Request
     include ESPN::Client::Athletes
     include ESPN::Client::Headlines
+    include ESPN::Client::Notes
     include ESPN::Client::Now
     include ESPN::Client::Scores
     include ESPN::Client::Sports
