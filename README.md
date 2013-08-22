@@ -2,6 +2,8 @@
 
 Simply Ruby Wrapper for the ESPN Developer API.
 
+[![Build Status](https://travis-ci.org/andrewpthorp/espn.png)](https://travis-ci.org/andrewpthorp/espn)
+
 ## Installation
 
     gem install espn
