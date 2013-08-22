@@ -22,8 +22,6 @@ module ESPN
           url += "/#{opts[:clip_id]}"
         end
 
-        puts url
-
         get(url, opts)
       end
 
