@@ -32,8 +32,6 @@ module ESPN
           url += "/#{opts[:headline_id]}"
         end
 
-        puts url
-
         get(url, opts)
       end
 
