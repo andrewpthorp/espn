@@ -12,8 +12,8 @@ module ESPN
 
       # TODO: Decide if I want to delete these or not. There is probably
       # a better way to do this, if so, by filtering them out.
-      %w( sport league method section team_id headline_id
-          athlete_id event_id note_id ).each do |k|
+      %w( sport league method section team_id headline_id category_id clip_id
+          athlete_id event_id note_id podcast_id recording_id ).each do |k|
         options.delete(k.to_sym)
       end
 

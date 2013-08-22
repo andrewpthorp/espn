@@ -2,6 +2,7 @@ require 'espn/connection'
 require 'espn/request'
 
 require 'espn/client/athletes'
+require 'espn/client/audio'
 require 'espn/client/headlines'
 require 'espn/client/medals'
 require 'espn/client/notes'
@@ -48,6 +49,7 @@ module ESPN
     include ESPN::Connection
     include ESPN::Request
     include ESPN::Client::Athletes
+    include ESPN::Client::Audio
     include ESPN::Client::Headlines
     include ESPN::Client::Medals
     include ESPN::Client::Notes
