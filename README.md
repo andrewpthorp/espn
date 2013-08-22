@@ -40,3 +40,7 @@ showing the world how API Wrappers should work.
 Copyright (c) 2013 Andrew Thorp. See [LICENSE][] for details.
 
 [license]: LICENSE.md
+
+## Attribution
+
+[![ESPN API](http://a.espncdn.com/i/apis/attribution/espn-api-red_150.png)](http://espn.go.com)
