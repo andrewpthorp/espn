@@ -2,6 +2,9 @@
 
 Simply Ruby Wrapper for the ESPN Developer API.
 
+[![Build Status](https://travis-ci.org/andrewpthorp/espn.png)](https://travis-ci.org/andrewpthorp/espn)
+[![Gem Version](https://badge.fury.io/rb/espn.png)](http://badge.fury.io/rb/espn)
+
 ## Installation
 
     gem install espn
@@ -38,3 +41,7 @@ showing the world how API Wrappers should work.
 Copyright (c) 2013 Andrew Thorp. See [LICENSE][] for details.
 
 [license]: LICENSE.md
+
+## Attribution
+
+[![ESPN API](http://a.espncdn.com/i/apis/attribution/espn-api-red_150.png)](http://espn.go.com)
