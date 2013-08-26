@@ -52,10 +52,10 @@ describe ESPN::Client::Headlines do
       end
     end
 
-    context 'with a headline_id param' do
-      it 'should include the headline_id in the request' do
+    context 'with a id param' do
+      it 'should include the id in the request' do
         stub_get('sports/news/5')
-        @client.headlines(headline_id: 5)
+        @client.headlines(id: 5)
         assert_requested :get, espn_url('sports/news/5')
       end
     end
