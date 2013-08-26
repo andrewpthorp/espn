@@ -16,6 +16,13 @@ require 'espn/client/video'
 
 module ESPN
 
+  # Public: The class that handles the bulk of the work between the API and
+  # the wrapper.
+  #
+  # Examples
+  #
+  #   client = ESPN::Client.new(api_key: 'abc123')
+  #   # => ESPN::Client
   class Client
 
     # Public: An attr_accessor for each configuration option.
@@ -51,7 +58,6 @@ module ESPN
     include ESPN::Mapper
     include ESPN::Request
     include ESPN::Helpers
-
     include ESPN::Client::Athletes
     include ESPN::Client::Audio
     include ESPN::Client::Headlines

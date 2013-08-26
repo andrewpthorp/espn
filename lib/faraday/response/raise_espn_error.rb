@@ -11,6 +11,13 @@ module Faraday
   #     builder.use Faraday::Response::RaiseESPNError
   #   end
   class Response::RaiseESPNError < Response::Middleware
+
+    # Internal: Hook into the complete callback for the client. When the result
+    # comes back, if it is a status code that we want to raise an error for, we
+    # will do that.
+    #
+    # Raises ESPN::Unauthorized and ESPN::Notfound.
+    # Returns nothing.
     def on_complete(response)
       case response[:status].to_i
       when 401
@@ -20,6 +27,10 @@ module Faraday
       end
     end
 
+    # Internal: Parse the response and return a human friendly String
+    # representing the error that we received.
+    #
+    # Returns a String.
     def error_message(response)
       message = if (body = response[:body]) && !body.empty?
         if body.is_a?(String)

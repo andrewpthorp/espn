@@ -3,6 +3,9 @@ require 'espn/client'
 require 'espn/error'
 require 'uri_template'
 
+# Public: The ESPN Module that all other modules and classes will be a part of.
+# This module extends the Configuration module so you can modify defaults at
+# this level.
 module ESPN
   extend Configuration
 

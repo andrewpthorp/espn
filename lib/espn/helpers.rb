@@ -1,4 +1,12 @@
 module ESPN
+
+  # Public: Commonly used Helpers are defined in this module.
+  #
+  # Examples
+  #
+  #   class Client
+  #     include ESPN::Helpers
+  #   end
   module Helpers
 
     # Public: If the last item of the args Array is a Hash, pop it off and
@@ -25,4 +33,5 @@ module ESPN
     end
 
   end
+
 end
