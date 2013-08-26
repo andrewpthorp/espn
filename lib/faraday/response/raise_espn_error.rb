@@ -19,6 +19,8 @@ module Faraday
     # Raises ESPN::Unauthorized, ESPN::Forbidden and ESPN::Notfound.
     # Returns nothing.
     def on_complete(response)
+      return if response[:body].nil?
+
       case response[:body][:code].to_i
       when 400
         raise ESPN::BadRequest, error_message(response)
@@ -31,7 +33,7 @@ module Faraday
       when 500
         raise ESPN::InternalServerError, error_message(response)
       when 504
-        raise ESPN::GatewayTimeout, error_message(error)
+        raise ESPN::GatewayTimeout, error_message(response)
       end
     end
 
