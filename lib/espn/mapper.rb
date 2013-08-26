@@ -48,12 +48,15 @@ module ESPN
                  mex.interliga uefa.europa ecu.2 global.world_football_challenge
                  uefa.carling eng.w.1 ger.super_cup ita.super_cup rug.irb.world
                  panam.m panam.w arg.copa),
-      tennis: %w(atp wta)
+      tennis: %w(atp wta),
+      boxing: %w(),
+      olympics: %w(),
+      :'horse-racing' => %w()
     }
 
     # Public: Map a league to a sport.
     #
-    # league  - The league (String or Symbol) to map to a sport.
+    # league - The league (String or Symbol) to map to a sport.
     #
     # Examples
     #
@@ -76,6 +79,42 @@ module ESPN
       end
 
       result
+    end
+
+    # Public: Determine if the value is a valid sport.
+    #
+    # test - The String or Symbol to test.
+    #
+    # Returns a Boolean.
+    def sport?(test)
+      LEAGUE_MAP.keys.include?(test.to_sym)
+    end
+
+    # Public: Determine if the test value is a valid league.
+    #
+    # test - The String or Symbol to test.
+    #
+    # Returns a Boolean.
+    def league?(test)
+      LEAGUE_MAP.values.flatten.include?(test.to_s)
+    end
+
+    # Public: Get league and sport from args array.
+    #
+    # args - The Array to extract the league and sport from.
+    #
+    # Returns two Strings.
+    def extract_league_and_sport(args)
+      if args.size == 2
+        return args[0], args[1]
+      elsif args.size == 1 && league?(args[0])
+        map = map_league_to_sport(args[0])
+        return map[:sport], map[:league]
+      elsif args.size == 1 && sport?(args[0])
+        return args[0], ''
+      else
+        return args[0], args[1]
+      end
     end
 
   end
