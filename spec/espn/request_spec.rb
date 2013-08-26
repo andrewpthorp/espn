@@ -46,5 +46,13 @@ describe ESPN::Request do
         @client.send(:build_url, ':some/pattern', fragments)
       end
     end
+
+    context 'when method is not a fragment' do
+      it 'should remove headlines from the pattern' do
+        pattern = ':sport/:league/news/headlines/:method'
+        pattern.should_receive(:gsub!).with('headlines', '')
+        @client.send(:build_url, pattern, {})
+      end
+    end
   end
 end

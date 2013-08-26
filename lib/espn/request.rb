@@ -39,7 +39,7 @@ module ESPN
 
       # TODO: Decide if I want to delete these or not. There is probably
       # a better way to do this, if so, by filtering them out.
-      %w( sport league method section team_id headline_id category_id clip_id
+      %w( sport league method section team_id headline_id id category_id clip_id
           athlete_id event_id note_id podcast_id recording_id ).each do |k|
         opts.delete(k.to_sym)
       end
@@ -80,7 +80,15 @@ module ESPN
     #
     # Returns a String.
     def build_url(pattern, fragments)
+
+      # Scrub data
       fragments.delete(:league) if fragments[:sport].to_s.empty?
+
+      # Remove the /headlines section if fragments does not include a :method.
+      # This is due to the HEADLINES API being a little strange.
+      unless fragments.include? :method
+        pattern.gsub!('headlines', '')
+      end
 
       template = URITemplate.new(:colon, pattern)
       url = template.expand(fragments)
