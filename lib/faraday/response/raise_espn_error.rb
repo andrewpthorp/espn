@@ -1,8 +1,15 @@
 require 'faraday'
 require 'multi_json'
 
-# @api private
 module Faraday
+
+  # Internal: Faraday Middleware that deals with errors coming back from the API.
+  #
+  # Examples
+  #
+  #   conn = Faraday.new({}) do |builder|
+  #     builder.use Faraday::Response::RaiseESPNError
+  #   end
   class Response::RaiseESPNError < Response::Middleware
     def on_complete(response)
       case response[:status].to_i
@@ -25,4 +32,5 @@ module Faraday
       "#{response[:method].to_s.upcase} #{response[:url].to_s}: #{response[:status]}#{message}"
     end
   end
+
 end
