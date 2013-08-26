@@ -1,7 +1,6 @@
 require 'espn/helpers'
 require 'espn/mapper'
 require 'espn/request'
-
 require 'espn/client/athletes'
 require 'espn/client/audio'
 require 'espn/client/headlines'
