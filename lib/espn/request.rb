@@ -1,4 +1,6 @@
 require 'multi_json'
+require 'faraday_middleware'
+require 'faraday/response/raise_espn_error'
 
 module ESPN
 
