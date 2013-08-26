@@ -104,7 +104,7 @@ module ESPN
     # args - The Array to extract the league and sport from.
     #
     # Returns two Strings.
-    def extract_league_and_sport(args)
+    def extract_sport_and_league(args)
       if args.size == 2
         return args[0], args[1]
       elsif args.size == 1 && league?(args[0])

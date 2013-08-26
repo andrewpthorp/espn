@@ -67,28 +67,28 @@ describe ESPN::Mapper do
     end
   end
 
-  describe '#extract_league_and_sport' do
+  describe '#extract_sport_and_league' do
     context 'with a league' do
       it 'should return the sport, league' do
-        @client.extract_league_and_sport([:mlb]).should eq(['baseball', 'mlb'])
+        @client.extract_sport_and_league([:mlb]).should eq(['baseball', 'mlb'])
       end
     end
 
     context 'with a sport' do
       it 'should return the sport and a blank string' do
-        @client.extract_league_and_sport(['horse-racing']).should eq(['horse-racing', ''])
+        @client.extract_sport_and_league(['horse-racing']).should eq(['horse-racing', ''])
       end
     end
 
     context 'with a league and a sport' do
       it 'should return the first two args' do
-        @client.extract_league_and_sport(['foo', 'bar']).should eq(['foo', 'bar'])
+        @client.extract_sport_and_league(['foo', 'bar']).should eq(['foo', 'bar'])
       end
     end
 
     context 'with more than two arguments' do
       it 'should return the first two args' do
-        @client.extract_league_and_sport(['foo', 'bar', 'baz']).should eq(['foo', 'bar'])
+        @client.extract_sport_and_league(['foo', 'bar', 'baz']).should eq(['foo', 'bar'])
       end
     end
   end
