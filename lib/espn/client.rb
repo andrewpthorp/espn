@@ -1,4 +1,3 @@
-require 'espn/connection'
 require 'espn/request'
 require 'espn/mapper'
 
@@ -48,7 +47,6 @@ module ESPN
       !api_key.nil?
     end
 
-    include ESPN::Connection
     include ESPN::Mapper
     include ESPN::Request
 
