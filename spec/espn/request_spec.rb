@@ -25,7 +25,7 @@ describe ESPN::Request do
 
     it 'should expand a pattern' do
       fragments = { foo: 'bar' }
-      mock_uri = mock('URITemplate')
+      mock_uri = double('URITemplate')
       URITemplate.stub(:new).and_return(mock_uri)
       mock_uri.should_receive(:expand).with(fragments).and_return('/')
       @client.send(:build_url, '/:some/pattern', fragments)
