@@ -81,7 +81,7 @@ module ESPN
     # Returns a String.
     def build_url(pattern, fragments)
 
-      # Scrub data
+      # Only allow league if sport is passed in.
       fragments.delete(:league) if fragments[:sport].to_s.empty?
 
       # Remove the /headlines section if fragments does not include a :method.
@@ -92,8 +92,13 @@ module ESPN
 
       template = URITemplate.new(:colon, pattern)
       url = template.expand(fragments)
+
+      # Remove duplicate slashes (if any)
       url = url.gsub(/\/{2,}/,'/')
+
+      # Remove trailing slash (if any)
       url = url.gsub(/\/+$/, '')
+
       url
     end
 
