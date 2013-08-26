@@ -45,8 +45,7 @@ module ESPN
       # Returns an Array of Hashie::Mash.
       def headlines(*args)
         # Build fragments and options
-        opts = extract_options!(args)
-        opts[:section] ||= 'sports'
+        opts = extract_options_with_defaults!(args, section: 'sports')
         opts[:sport], opts[:league] = extract_sport_and_league(args, opts)
 
         # Build URL
