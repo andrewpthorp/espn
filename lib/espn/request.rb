@@ -71,5 +71,23 @@ module ESPN
       connection
     end
 
+    # Internal: Takes a pattern and a Hash of fragments and constructs a url.
+    # If the fragments include a league but not a sport, the league will be
+    # deleted from the Hash so it does not get sent along.
+    #
+    # pattern   - The pattern to match fragments against.
+    # fragments - The Array of fragments to apply to the pattern.
+    #
+    # Returns a String.
+    def build_url(pattern, fragments)
+      fragments.delete(:league) if fragments[:sport].to_s.empty?
+
+      template = URITemplate.new(:colon, pattern)
+      url = template.expand(fragments)
+      url = url.gsub(/\/{2,}/,'/')
+      url = url.gsub(/\/+$/, '')
+      url
+    end
+
   end
 end

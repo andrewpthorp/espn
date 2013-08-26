@@ -1,6 +1,7 @@
 require 'espn/configuration'
 require 'espn/client'
 require 'espn/error'
+require 'uri_template'
 
 module ESPN
   extend Configuration
