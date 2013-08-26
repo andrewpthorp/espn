@@ -47,11 +47,7 @@ module ESPN
         # Build fragments and options
         opts = extract_options!(args)
         opts[:section] ||= 'sports'
-
-        # Extract League/Sport
-        sport, league = extract_sport_and_league(args)
-        opts[:league] ||= league
-        opts[:sport] ||= sport
+        opts[:sport], opts[:league] = extract_sport_and_league(args, opts)
 
         # Build URL
         pattern = "#{opts[:section]}/:sport/:league/news/headlines/:method/:id"

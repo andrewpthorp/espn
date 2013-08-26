@@ -99,22 +99,40 @@ module ESPN
       LEAGUE_MAP.values.flatten.include?(test.to_s)
     end
 
-    # Public: Get league and sport from args array.
+    # Public: Get league and sport from args array. If sport or league is passed
+    # in the opts hash, they will override any mappings from the args Array.
     #
     # args - The Array to extract the league and sport from.
+    # opts - The Hash that will override all mappings if possible.
+    #
+    # Examples
+    #
+    #   extract_sport_and_league([:mlb])
+    #   # => 'baseball', 'mlb'
+    #
+    #   extract_sport_and_league(['horse-racing'])
+    #   # => 'horse-racing', ''
+    #
+    #   extract_sport_and_league(['baseball', 'mlb'], sport: 'basketball')
+    #   # => 'basketball', 'mlb'
     #
     # Returns two Strings.
-    def extract_sport_and_league(args)
-      if args.size == 2
-        return args[0], args[1]
-      elsif args.size == 1 && league?(args[0])
+    def extract_sport_and_league(args, opts={})
+      sport, league = opts[:sport], opts[:league]
+
+      if args.size == 1 && league?(args[0])
         map = map_league_to_sport(args[0])
-        return map[:sport], map[:league]
+        sport ||= map[:sport]
+        league ||= map[:league]
       elsif args.size == 1 && sport?(args[0])
-        return args[0], ''
+        sport ||= args[0]
+        league ||= ''
       else
-        return args[0], args[1]
+        sport ||= args[0] || ''
+        league ||= args[1] || ''
       end
+
+      return sport, league
     end
 
   end
