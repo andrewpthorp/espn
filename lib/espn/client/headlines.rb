@@ -13,9 +13,9 @@ module ESPN
       # Public: Get latest sports news and analysis from the ESPN API.
       #
       # sport   - A Symbol or String of the sport (optional).
-      # league  - A Symbol or String of the league (optional). If a league is
-      #           passed, but not a sport, an attempt will be made to map the
-      #           league to a sport.
+      # league  - A Symbol or String of the league. If a league is passed, but
+      #           not a sport, an attempt will be made to map the league to a
+      #           sport (optional).
       # opts    - Hash options used to refine the selection. If sport and/or
       #           league are passed in, they will override the mapped values
       #           (default: {}).
