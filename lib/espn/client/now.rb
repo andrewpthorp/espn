@@ -1,5 +1,13 @@
 module ESPN
   class Client
+
+    # Public: The mapping to the ESPN NOW API of the ESPN developer API.
+    #
+    # Examples
+    #
+    #   class Client
+    #     include ESPN::Client::Now
+    #   end
     module Now
 
       # Public: Get stream of the latest content published on ESPN.com.
@@ -9,13 +17,12 @@ module ESPN
       #
       # Returns an Array of Hashie::Mash
       def now(opts={})
-        url = 'now'
+        # Build URL
+        pattern = 'now/:method'
+        url = build_url(pattern, opts)
 
-        unless opts[:method].to_s.empty?
-          url += "/#{opts[:method]}"
-        end
-
-        get(url, opts)
+        # Make request
+        get(url, opts).feed
       end
 
     end
