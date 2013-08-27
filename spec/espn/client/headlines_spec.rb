@@ -93,7 +93,7 @@ describe ESPN::Client::Headlines do
       end
 
       context 'with a sport param' do
-        it 'should include the sport in the request' do
+        it 'should get headlines for that sport' do
           stub_headlines('sports/baseball/news')
           @client.headlines(sport: 'baseball')
           assert_requested :get, espn_url('sports/baseball/news')
@@ -101,7 +101,7 @@ describe ESPN::Client::Headlines do
       end
 
       context 'with a sport and league param' do
-        it 'should include both params in the request' do
+        it 'should get headlines for that sport and league' do
           stub_headlines('sports/baseball/mlb/news')
           @client.headlines(sport: 'baseball', league: 'mlb')
           assert_requested :get, espn_url('sports/baseball/mlb/news')
@@ -109,15 +109,15 @@ describe ESPN::Client::Headlines do
       end
 
       context 'with a league param but no sport param' do
-        it 'should not include the league in the request' do
-          stub_headlines('sports/news')
+        it 'should get headlines for that league mapped to a sport' do
+          stub_headlines('sports/baseball/mlb/news')
           @client.headlines(league: 'mlb')
-          assert_requested :get, espn_url('sports/news')
+          assert_requested :get, espn_url('sports/baseball/mlb/news')
         end
       end
 
       context 'with a method param' do
-        it 'should include the method in the request' do
+        it 'should get headlines for that method' do
           stub_headlines('sports/news/headlines/top')
           @client.headlines(method: 'top')
           assert_requested :get, espn_url('sports/news/headlines/top')

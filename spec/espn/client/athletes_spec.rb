@@ -31,7 +31,13 @@ describe ESPN::Client::Athletes do
       results.first.fullName.should eq('Chase Utley')
     end
 
-    context 'when passing an id' do
+    it 'should accept a league in the opts hash' do
+      stub_athletes('sports/baseball/mlb/athletes')
+      results = @client.athletes(league: 'mlb')
+      assert_requested :get, espn_url('sports/baseball/mlb/athletes')
+    end
+
+    context 'when passing an id in the opts hash' do
       it 'should request only that athlete' do
         stub_athletes('sports/baseball/mlb/athletes/1')
         results = @client.athletes(:mlb, id: 1)
