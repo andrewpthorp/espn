@@ -1,20 +1,20 @@
 require 'espn'
+require 'json'
 require 'rspec'
 require 'webmock/rspec'
 require 'hashie'
 
-def stub_get(url)
-  stub_request(:get, espn_url(url))
+def stub_get(file=nil)
+  if file.nil?
+    stub_request(:get, /api.espn.com/)
+  else
+    response = {
+      body: Hashie::Mash.new(JSON.parse(IO.read("spec/responses/#{file}")))
+    }
+    stub_request(:get, /api.espn.com/).to_return(response)
+  end
 end
 
 def espn_url(url)
   "http://api.espn.com/v1/#{url}"
-end
-
-def default_response(key, node)
-  results = Hashie::Mash.new
-  results.sports = [Hashie::Mash.new]
-  results.sports.first.leagues = [Hashie::Mash.new]
-  results.sports.first.leagues.first[key] = [node]
-  return results
 end
