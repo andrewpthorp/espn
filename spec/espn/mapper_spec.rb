@@ -107,6 +107,11 @@ describe ESPN::Mapper do
         results = @client.extract_sport_and_league(['mlb'], league: 'foo')
         results.should eq(['baseball', 'foo'])
       end
+
+      it 'should map the league to a sport' do
+        results = @client.extract_sport_and_league([], league: 'mlb')
+        results.should eq(['baseball', 'mlb'])
+      end
     end
   end
 

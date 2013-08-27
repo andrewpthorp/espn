@@ -127,6 +127,9 @@ module ESPN
       elsif args.size == 1 && sport?(args[0])
         sport ||= args[0]
         league ||= ''
+      elsif !opts[:league].to_s.empty?
+        map = map_league_to_sport(opts[:league])
+        sport ||= map[:sport]
       else
         sport ||= args[0] || ''
         league ||= args[1] || ''
