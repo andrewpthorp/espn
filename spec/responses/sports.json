@@ -1,0 +1,164 @@
+{
+    "sports": [{
+        "name": "baseball",
+        "id": 1,
+        "uid": "s:1",
+        "links": {
+            "api": {
+                "leagues": {
+                    "href": "http://api.espn.com/v1/sports/baseball/mlb"
+                },
+                "news": {
+                    "href": "http://api.espn.com/v1/sports/baseball/mlb/news"
+                },
+                "notes": {
+                    "href": "http://api.espn.com/v1/sports/baseball/mlb/news/notes"
+                },
+                "headlines": {
+                    "href": "http://api.espn.com/v1/sports/baseball/mlb/news/headlines"
+                },
+                "events": {
+                    "href": "http://api.espn.com/v1/sports/baseball/mlb/events"
+                },
+                "teams": {
+                    "href": "http://api.espn.com/v1/sports/baseball/mlb/teams"
+                },
+                "athletes": {
+                    "href": "http://api.espn.com/v1/sports/baseball/mlb/athletes"
+                },
+                "standings": {
+                    "href": "http://api.espn.com/v1/sports/baseball/mlb/standings"
+                }
+            }
+        },
+        "leagues": [{
+            "name": "Major League Baseball",
+            "abbreviation": "mlb",
+            "id": 10,
+            "uid": "s:1~l:10",
+            "groupId": 9,
+            "shortName": "MLB",
+            "season": {
+                "year": 2013,
+                "type": 2,
+                "description": "regular",
+                "startDate": "2013-03-31T07:00:00Z",
+                "endDate": "2013-10-01T06:59:59Z"
+            },
+            "week": {
+                "number": 22,
+                "startDate": "2013-08-25T07:00:00Z",
+                "endDate": "2013-09-01T06:59:00Z"
+            },
+            "groups": [{
+                "name": "American League",
+                "abbreviation": "al",
+                "groupId": 7,
+                "shortName": "AL",
+                "season": {
+                    "year": "2013",
+                    "type": 2,
+                    "description": "regular",
+                    "startDate": "2013-01-01T00:00:00Z",
+                    "endDate": "2013-12-31T23:59:59Z"
+                },
+                "week": {},
+                "groups": [{
+                    "name": "American League East",
+                    "abbreviation": "ale",
+                    "groupId": 1,
+                    "shortName": "AL East",
+                    "season": {
+                        "year": "2013",
+                        "type": 2,
+                        "description": "regular",
+                        "startDate": "2013-01-01T00:00:00Z",
+                        "endDate": "2013-12-31T23:59:59Z"
+                    },
+                    "week": {}
+                }, {
+                    "name": "American League Central",
+                    "abbreviation": "alc",
+                    "groupId": 2,
+                    "shortName": "AL Cent",
+                    "season": {
+                        "year": "2013",
+                        "type": 2,
+                        "description": "regular",
+                        "startDate": "2013-01-01T00:00:00Z",
+                        "endDate": "2013-12-31T23:59:59Z"
+                    },
+                    "week": {}
+                }, {
+                    "name": "American League West",
+                    "abbreviation": "alw",
+                    "groupId": 3,
+                    "shortName": "AL West",
+                    "season": {
+                        "year": "2013",
+                        "type": 2,
+                        "description": "regular",
+                        "startDate": "2013-01-01T00:00:00Z",
+                        "endDate": "2013-12-31T23:59:59Z"
+                    },
+                    "week": {}
+                }]
+            }, {
+                "name": "National League",
+                "abbreviation": "nl",
+                "groupId": 8,
+                "shortName": "NL",
+                "season": {
+                    "year": "2013",
+                    "type": 2,
+                    "description": "regular",
+                    "startDate": "2013-01-01T00:00:00Z",
+                    "endDate": "2013-12-31T23:59:59Z"
+                },
+                "week": {},
+                "groups": [{
+                    "name": "National League East",
+                    "abbreviation": "nle",
+                    "groupId": 4,
+                    "shortName": "NL East",
+                    "season": {
+                        "year": "2013",
+                        "type": 2,
+                        "description": "regular",
+                        "startDate": "2013-01-01T00:00:00Z",
+                        "endDate": "2013-12-31T23:59:59Z"
+                    },
+                    "week": {}
+                }, {
+                    "name": "National League Central",
+                    "abbreviation": "nlc",
+                    "groupId": 5,
+                    "shortName": "NL Cent",
+                    "season": {
+                        "year": "2013",
+                        "type": 2,
+                        "description": "regular",
+                        "startDate": "2013-01-01T00:00:00Z",
+                        "endDate": "2013-12-31T23:59:59Z"
+                    },
+                    "week": {}
+                }, {
+                    "name": "National League West",
+                    "abbreviation": "nlw",
+                    "groupId": 6,
+                    "shortName": "NL West",
+                    "season": {
+                        "year": "2013",
+                        "type": 2,
+                        "description": "regular",
+                        "startDate": "2013-01-01T00:00:00Z",
+                        "endDate": "2013-12-31T23:59:59Z"
+                    },
+                    "week": {}
+                }]
+            }]
+        }]
+    }],
+    "timestamp": "2013-08-27T17:20:59Z",
+    "status": "success"
+}

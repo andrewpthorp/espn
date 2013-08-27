@@ -1,0 +1,174 @@
+{
+    "timestamp": "2013-08-27T17:03:09Z",
+    "resultsOffset": 0,
+    "status": "success",
+    "resultsLimit": 10,
+    "resultsCount": 2189,
+    "headlines": [{
+        "headline": "Ronnie Brewer has deal with Rockets",
+        "keywords": ["physical", "deal"],
+        "lastModified": "2013-08-27T03:22:29Z",
+        "audio": [],
+        "premium": false,
+        "mobileStory": "",
+        "links": {
+            "api": {
+                "news": {
+                    "href": "http://api.espn.com/v1/sports/news/9603553"
+                }
+            },
+            "web": {
+                "href": "http://espn.go.com/nba/story/_/id/9603553/ronnie-brewer-says-2-year-deal-houston-rockets?ex_cid=espnapi_public"
+            },
+            "mobile": {
+                "href": "http://m.espn.go.com/nba/story?storyId=9603553&ex_cid=espnapi_public"
+            }
+        },
+        "type": "HeadlineNews",
+        "related": [],
+        "id": 9603553,
+        "story": "",
+        "title": "Ronnie Brewer says he has 2-year deal with Houston Rockets",
+        "linkText": "Brewer says he has 2-year deal with Rockets",
+        "source": "Associated Press",
+        "description": "Forward Ronnie Brewer says he has taken a physical to sign with the Houston Rockets.",
+        "images": [],
+        "categories": [{
+            "description": "NBA",
+            "type": "league",
+            "sportId": 46,
+            "leagueId": 46,
+            "league": {
+                "id": 46,
+                "description": "NBA",
+                "links": {
+                    "api": {
+                        "leagues": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba"
+                        }
+                    },
+                    "web": {
+                        "leagues": {
+                            "href": "http://espn.go.com/nba/?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "leagues": {
+                            "href": "http://m.espn.go.com/nba/?ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            },
+            "uid": "s:40~l:46"
+        }, {
+            "description": "Ronnie Brewer",
+            "type": "athlete",
+            "sportId": 46,
+            "athleteId": 2991,
+            "athlete": {
+                "id": 2991,
+                "description": "Ronnie Brewer",
+                "links": {
+                    "api": {
+                        "athletes": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/athletes/2991"
+                        }
+                    },
+                    "web": {
+                        "athletes": {
+                            "href": "http://espn.go.com/nba/player/_/id/2991/ronnie-brewer?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "athletes": {
+                            "href": "http://m.espn.go.com/nba/playercard?playerId=2991&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }
+        }, {
+            "description": "Oklahoma City Thunder",
+            "type": "team",
+            "sportId": 46,
+            "teamId": 25,
+            "team": {
+                "id": 25,
+                "description": "Oklahoma City Thunder",
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/25"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nba/team/_/name/okc/oklahoma-city-thunder?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nba/clubhouse?teamId=25&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            },
+            "uid": "s:40~l:46~t:25"
+        }, {
+            "description": "Houston Rockets",
+            "type": "team",
+            "sportId": 46,
+            "teamId": 10,
+            "team": {
+                "id": 10,
+                "description": "Houston Rockets",
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/10"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nba/team/_/name/hou/houston-rockets?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nba/clubhouse?teamId=10&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            },
+            "uid": "s:40~l:46~t:10"
+        }, {
+            "description": "New York Knicks",
+            "type": "team",
+            "sportId": 46,
+            "teamId": 18,
+            "team": {
+                "id": 18,
+                "description": "New York Knicks",
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/18"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nba/team/_/name/ny/new-york-knicks?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nba/clubhouse?teamId=18&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            },
+            "uid": "s:40~l:46~t:18"
+        }],
+        "published": "2013-08-27T03:19:36Z",
+        "video": []
+    }]
+}

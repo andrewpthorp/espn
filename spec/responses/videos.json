@@ -1,0 +1,11 @@
+{
+   "resultsCount":29,
+   "resultsOffset":0,
+   "resultsLimit":10,
+   "recordings":[
+    {
+      "id": 1234567,
+      "headline": "This is a sample video."
+    }
+  ]
+}

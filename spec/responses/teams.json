@@ -1,0 +1,51 @@
+{
+    "sports": [{
+        "name": "baseball",
+        "id": 1,
+        "uid": "s:1",
+        "leagues": [{
+            "name": "Major League Baseball",
+            "abbreviation": "mlb",
+            "id": 10,
+            "uid": "s:1~l:10",
+            "groupId": 9,
+            "shortName": "MLB",
+            "teams": [{
+                "id": 22,
+                "uid": "s:1~l:10~t:22",
+                "location": "Philadelphia",
+                "name": "Phillies",
+                "abbreviation": "PHI",
+                "color": "BB003A",
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/22"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/22/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/22/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/mlb/team/_/name/phi/philadelphia-phillies?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/mlb/clubhouse?teamId=22&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }]
+        }]
+    }],
+    "resultsOffset": 0,
+    "resultsLimit": 50,
+    "resultsCount": 1,
+    "timestamp": "2013-08-27T17:21:37Z",
+    "status": "success"
+}
