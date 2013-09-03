@@ -1,0 +1,44 @@
+{
+    "timestamp": "2013-08-27T17:22:10Z",
+    "resultsOffset": 0,
+    "status": "success",
+    "resultsLimit": 10,
+    "breakingNews": [],
+    "resultsCount": 222,
+    "feed": [{
+        "headline": "Halladay's future",
+        "lastModified": "2013-08-27T01:59:39Z",
+        "premium": true,
+        "links": {
+            "web": {
+                "href": "http://insider.espn.go.com/blog/mlb/rumors/post?id=7061&ex_cid=espnapi_public"
+            },
+            "mobile": {
+                "href": "http://m.espn.go.com/general/blogs/blogpost?blogname=mlbrumors&id=7061&ex_cid=espnapi_public"
+            }
+        },
+        "type": "BlogEntry",
+        "section": "MLB Rumors",
+        "id": 7061,
+        "title": "Halladay's future",
+        "byline": "Jason Catania",
+        "linkText": "Halladay's future",
+        "source": "ESPN.com",
+        "metrics": [],
+        "description": " Roy Halladay returned to the mound a little bit sooner than expected for the Philadelphia Phillies on Sunday. What does the future hold for the veteran right-hander, who is a free agent at season's end?",
+        "categories": [{
+            "teamId": 22,
+            "type": "team",
+            "sportId": 10,
+            "description": "Philadelphia Phillies",
+            "uid": "s:1~l:10~t:22"
+        }, {
+            "leagueId": 10,
+            "type": "league",
+            "sportId": 10,
+            "description": "MLB",
+            "uid": "s:1~l:10"
+        }],
+        "published": "2013-08-27T15:44:56Z"
+    }]
+}

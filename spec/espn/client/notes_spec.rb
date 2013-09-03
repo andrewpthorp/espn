@@ -3,71 +3,61 @@ require 'spec_helper'
 describe ESPN::Client::Notes do
   before do
     @client = ESPN::Client.new
+    stub_get 'notes.json'
   end
 
   describe '#notes' do
+    it 'should return an array of notes' do
+      @client.notes.first.respond_to?(:headline).should be_true
+    end
 
-    it 'gets all notes' do
-      stub_get('sports/news/notes')
+    it 'gets all notes by default' do
       @client.notes
       assert_requested :get, espn_url('sports/news/notes')
     end
 
-    context 'with a sport param' do
-      it 'should include the sport in the request' do
-        stub_get('sports/baseball/news/notes')
-        @client.notes(sport: 'baseball')
-        assert_requested :get, espn_url('sports/baseball/news/notes')
+    context 'when passing values as args' do
+      context 'when passing the sport' do
+        it 'should request notes for that sport' do
+          @client.notes(:football)
+          assert_requested :get, espn_url('sports/football/news/notes')
+        end
       end
 
-      context 'with a note_id param' do
-        it 'should include the sport and note_id params in the request' do
-          stub_get('sports/baseball/news/notes/5')
-          @client.notes(sport: 'baseball', note_id: 5)
-          assert_requested :get, espn_url('sports/baseball/news/notes/5')
+      context 'when passing the league' do
+        it 'should request notes for the league' do
+          @client.notes(:nfl)
+          assert_requested :get, espn_url('sports/football/nfl/news/notes')
+        end
+      end
+
+      context 'when passing the league and sport' do
+        it 'should request notes for that league and sport' do
+          @client.notes(:baseball, 'mlb')
+          assert_requested :get, espn_url('sports/baseball/mlb/news/notes')
+        end
+      end
+
+      context 'when passing sport in the opts hash' do
+        it 'should override the symbol with the opts' do
+          @client.notes(:basketball, sport: 'baseball')
+          assert_requested :get, espn_url('sports/baseball/news/notes')
+        end
+      end
+
+      context 'when passing league in the opts hash' do
+        it 'should override the symbol with the opts' do
+          @client.notes('wnba', league: 'mlb')
+          assert_requested :get, espn_url('sports/basketball/mlb/news/notes')
         end
       end
     end
 
-    context 'with a sport and a league param' do
-      it 'should include the sport and league params in the request' do
-        stub_get('sports/baseball/mlb/news/notes')
-        @client.notes(sport: 'baseball', league: 'mlb')
-        assert_requested :get, espn_url('sports/baseball/mlb/news/notes')
-      end
-
-      context 'with a note_id param' do
-        it 'should include the sport, league and note_id params' do
-          stub_get('sports/baseball/mlb/news/notes/1')
-          @client.notes(sport: 'baseball', league: 'mlb', note_id: 1)
-          assert_requested :get, espn_url('sports/baseball/mlb/news/notes/1')
-        end
-      end
-    end
-
-    context 'with a note_id param' do
-      it 'should include the note_id in the request' do
-        stub_get('sports/news/notes/5')
-        @client.notes(note_id: 5)
+    context 'with an id in the opts hash' do
+      it 'should request that specific note' do
+        @client.notes(id: 5)
         assert_requested :get, espn_url('sports/news/notes/5')
       end
     end
-
-    context 'with a league param and no sport param' do
-      it 'should not include either in the request' do
-        stub_get('sports/news/notes')
-        @client.notes(league: 'mlb')
-        assert_requested :get, espn_url('sports/news/notes')
-      end
-
-      context 'with a note_id param' do
-        it 'should include the note_id in the request' do
-          stub_get('sports/news/notes/2')
-          @client.notes(league: 'mlb', note_id: 2)
-          assert_requested :get, espn_url('sports/news/notes/2')
-        end
-      end
-    end
-
   end
 end
