@@ -6,6 +6,34 @@ describe ESPN::Client::Teams do
     stub_get 'teams.json'
   end
 
+  describe '#team' do
+    it 'should return a team' do
+      @client.team(1, :mlb).name.should eq('Phillies')
+    end
+
+    it 'should get a team for the given league' do
+      @client.team(1, :mlb)
+      assert_requested :get, espn_url('sports/baseball/mlb/teams/1')
+    end
+
+    it 'should accept a league in the opts hash' do
+      @client.team(1, league: 'mlb')
+      assert_requested :get, espn_url('sports/baseball/mlb/teams/1')
+    end
+
+    context 'when league is not passed' do
+      it 'should raise an argument error' do
+        expect { @client.team(1) }.to raise_error(ArgumentError)
+      end
+    end
+
+    context 'when invalid league is passed' do
+      it 'should raise an argument error' do
+        expect { @client.team(1, :foobar) }.to raise_error(ArgumentError)
+      end
+    end
+  end
+
   describe '#teams' do
     it 'returns an array of teams' do
       @client.teams(:mlb).first.name.should eq('Phillies')
@@ -45,13 +73,6 @@ describe ESPN::Client::Teams do
     end
 
     context 'when passing values in the opts hash' do
-      context 'when passing an id' do
-        it 'should get that specific team' do
-          @client.teams(:mlb, id: 5)
-          assert_requested :get, espn_url('sports/baseball/mlb/teams/5')
-        end
-      end
-
       context 'when passing a league' do
         it 'should map that league to a sport' do
           @client.teams(league: 'mlb')
