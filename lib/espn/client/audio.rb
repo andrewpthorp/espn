@@ -12,10 +12,6 @@ module ESPN
 
       # Public: Get audio podcasts and clips from ESPN.
       #
-      # sport   - A Symbol or String of the sport (optional).
-      # league  - A Symbol or String of the league. If a league is passed, but
-      #           not a sport, an attempt will be made to map the league to a
-      #           sport (optional).
       # opts    - Hash options used to refine the selection. If sport and/or
       #           league are passed in, they will override the mapped values
       #           You can find a full list of options on the ESPN developer API
@@ -28,10 +24,8 @@ module ESPN
       # Examples
       #
       # Returns an Array of Hashie::Mash.
-      def audio(*args)
-        # Build fragments and options
-        opts = extract_options_with_defaults!(args, method: 'podcasts')
-        opts[:sport], opts[:league] = extract_sport_and_league(args, opts)
+      def audio(opts={})
+        opts[:method] ||= 'podcasts'
 
         # Correct invalid method.
         if opts[:method] == 'podcast_recordings'
