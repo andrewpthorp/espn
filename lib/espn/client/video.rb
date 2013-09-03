@@ -12,14 +12,14 @@ module ESPN
 
       # Public: Get video clip and channel information from ESPN.
       #
-      # opts  - Hash options used to refine the selection (default: {}).
-      #       - :category_id  - The id of the category (default: nil).
-      #       - :clip_id      - The id of the clip (default: nil).
+      # channel_id  - The id of a video channel.
+      # opts        - Hash options used to refine the selection (default: {}).
+      #               :clip_id - The id of the clip (default: nil).
       #
       # Returns an Array of Hashie::Mash.
-      def videos(opts={})
+      def videos(channel_id, opts={})
         # Build URL
-        pattern = 'video/channels/:category_id/clips/:clip_id'
+        pattern = "video/channels/#{channel_id}/clips/:clip_id"
         url = build_url(pattern, opts)
 
         # Make request
