@@ -15,7 +15,7 @@ module ESPN
     # it does not alter the Array class, and handles setting optional defaults.
     #
     # args      - The Array that we want to pop the Hash off of.
-    # defaults  - Hash that sets default values if they don't exist.
+    # defaults  - Hash that sets default values (default: {}, optional).
     #
     # Examples
     #
