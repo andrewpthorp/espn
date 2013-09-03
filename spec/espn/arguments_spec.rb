@@ -53,4 +53,24 @@ describe ESPN::Arguments do
     end
   end
 
+  context 'when passing required fields' do
+    it 'should raise an exception if the field is blank' do
+      expect {
+        ESPN::Arguments.new([], {}, [:league])
+      }.to raise_error(ArgumentError, 'You must supply a valid league.')
+    end
+
+    it 'should not raise an exception if the field is not blank' do
+      expect {
+        ESPN::Arguments.new([:mlb], {}, [:league])
+      }.not_to raise_error(ArgumentError)
+    end
+
+    it 'should accept a string' do
+      expect {
+        ESPN::Arguments.new([:mlb], {}, ['league'])
+      }.not_to raise_error(ArgumentError)
+    end
+  end
+
 end

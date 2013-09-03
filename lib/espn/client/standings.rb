@@ -23,11 +23,7 @@ module ESPN
       #
       # Returns an Array of Hashie::Mash.
       def standings(*args)
-        arguments = ESPN::Arguments.new(args)
-
-        if blank?(arguments.options[:league])
-          raise ArgumentError, 'You must provide a valid league.'
-        end
+        arguments = ESPN::Arguments.new(args, {}, [:league])
 
         # Build URL
         pattern = 'sports/:sport/:league/standings'
