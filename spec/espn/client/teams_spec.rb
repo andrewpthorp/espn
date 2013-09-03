@@ -7,60 +7,66 @@ describe ESPN::Client::Teams do
   end
 
   describe '#teams' do
+    it 'returns an array of teams' do
+      @client.teams.first.name.should eq('Phillies')
+    end
 
     it 'gets all teams' do
       @client.teams
       assert_requested :get, espn_url('sports/teams')
     end
 
-    context 'with a sport param' do
-      it 'should include the sport in the request' do
-        @client.teams(sport: 'baseball')
-        assert_requested :get, espn_url('sports/baseball/teams')
+    context 'when passing values as args' do
+      context 'when passing a sport' do
+        it 'should get teams for that sport' do
+          @client.teams(:baseball)
+          assert_requested :get, espn_url('sports/baseball/teams')
+        end
       end
 
-      context 'with a team_id param' do
-        it 'should include the sport and team_id params in the request' do
-          @client.teams(sport: 'baseball', team_id: 5)
-          assert_requested :get, espn_url('sports/baseball/teams/5')
+      context 'when passing a league' do
+        it 'should map that league to a sport' do
+          @client.teams(:mlb)
+          assert_requested :get, espn_url('sports/baseball/mlb/teams')
+        end
+      end
+
+      context 'when passing a sport and a league' do
+        it 'should get teams for that sport and league' do
+          @client.teams(:football, :nfl)
+          assert_requested :get, espn_url('sports/football/nfl/teams')
         end
       end
     end
 
-    context 'with a sport and a league param' do
-      it 'should include the sport and league params in the request' do
-        @client.teams(sport: 'baseball', league: 'mlb')
-        assert_requested :get, espn_url('sports/baseball/mlb/teams')
+    context 'when passing values in the opts hash' do
+      context 'when passing an id' do
+        it 'should get that specific team' do
+          @client.teams(id: 5)
+          assert_requested :get, espn_url('sports/teams/5')
+        end
       end
 
-      context 'with a team_id param' do
-        it 'should include the sport, league and team_id params' do
-          @client.teams(sport: 'baseball', league: 'mlb', team_id: 1)
-          assert_requested :get, espn_url('sports/baseball/mlb/teams/1')
+      context 'when passing a sport' do
+        it 'should get teams for that sport' do
+          @client.teams(sport: 'baseball')
+          assert_requested :get, espn_url('sports/baseball/teams')
+        end
+      end
+
+      context 'when passing a league' do
+        it 'should map that league to a sport' do
+          @client.teams(league: 'mlb')
+          assert_requested :get, espn_url('sports/baseball/mlb/teams')
+        end
+      end
+
+      context 'when passing a sport and a league' do
+        it 'should get teams for that sport and league' do
+          @client.teams(sport: 'football', league: 'nfl')
+          assert_requested :get, espn_url('sports/football/nfl/teams')
         end
       end
     end
-
-    context 'with a team_id param' do
-      it 'should include the team_id in the request' do
-        @client.teams(team_id: 5)
-        assert_requested :get, espn_url('sports/teams/5')
-      end
-    end
-
-    context 'with a league param and no sport param' do
-      it 'should not include either in the request' do
-        @client.teams(league: 'mlb')
-        assert_requested :get, espn_url('sports/teams')
-      end
-
-      context 'with a team_id param' do
-        it 'should include the team_id in the request' do
-          @client.teams(league: 'mlb', team_id: 2)
-          assert_requested :get, espn_url('sports/teams/2')
-        end
-      end
-    end
-
   end
 end
