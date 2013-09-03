@@ -1,6 +1,7 @@
 require 'faraday'
 require 'multi_json'
 
+# Internal: Faraday module that the response error middleware is added to.
 module Faraday
 
   # Internal: Faraday Middleware that deals with errors coming back from the API.
