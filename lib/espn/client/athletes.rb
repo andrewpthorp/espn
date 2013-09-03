@@ -12,7 +12,7 @@ module ESPN
 
       # Public: Get a specific athlete from the ESPN API.
       #
-      # id    - An id of an athlete.
+      # id      - An id of an athlete.
       # sport   - A Symbol or String of the sport (optional).
       # league  - A Symbol or String of the league. If a league is passed, but
       #           not a sport, an attempt will be made to map the league to a
