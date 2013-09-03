@@ -36,13 +36,8 @@ module ESPN
       # Returns an Array of Hashie::Mash.
       def notes(*args)
         arguments = ESPN::Arguments.new(args)
-
-        # Build URL
         pattern = "sports/:sport/:league/news/notes"
-        url = build_url(pattern, arguments.options)
-
-        # Make request
-        get(url, arguments.options).notes
+        get(pattern, arguments.options).notes
       end
 
     end

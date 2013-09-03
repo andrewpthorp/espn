@@ -6,11 +6,18 @@ describe ESPN::Request do
   end
 
   describe '#get' do
+    it 'should build a url from a template' do
+      opts = { foo: 'bar' }
+      pattern = '/:foo/baz'
+      @client.should_receive(:request).with(:get, '/bar/baz', opts)
+      @client.get(pattern, opts)
+    end
+
     it 'should call request' do
       opts = { foo: 'bar' }
-      path = '/foo/bar'
-      @client.should_receive(:request).with(:get, path, opts)
-      @client.get(path, opts)
+      pattern = '/foo/bar'
+      @client.should_receive(:request).with(:get, pattern, opts)
+      @client.get(pattern, opts)
     end
   end
 

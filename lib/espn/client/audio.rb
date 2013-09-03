@@ -29,12 +29,8 @@ module ESPN
           opts[:method] = 'podcasts/recordings'
         end
 
-        # Build URL
         pattern = "audio/#{opts[:method]}/:podcast_id/:recording_id"
-        url = build_url(pattern, opts)
-
-        # Make request
-        get(url, opts).recordings
+        get(pattern, opts).recordings
       end
 
     end

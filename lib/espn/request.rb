@@ -17,11 +17,12 @@ module ESPN
     # Public: Make an HTTP GET Request to the path, passing the opts as params
     # in the query.
     #
-    # path  - The URI to make the request to.
-    # opts  - A Hash to send as query parameters (default: {}).
+    # pattern - A String to build a URL from.
+    # opts    - A Hash to send as query parameters (default: {}).
     #
     # Returns a String.
-    def get(path, opts={})
+    def get(pattern, opts={})
+      path = build_url(pattern, opts)
       request(:get, path, opts)
     end
 

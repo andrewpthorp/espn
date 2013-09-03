@@ -18,12 +18,8 @@ module ESPN
       #
       # Returns an Array of Hashie::Mash.
       def videos(channel_id, opts={})
-        # Build URL
         pattern = "video/channels/#{channel_id}/clips/:clip_id"
-        url = build_url(pattern, opts)
-
-        # Make request
-        get(url, opts).channels
+        get(pattern, opts).channels
       end
 
     end

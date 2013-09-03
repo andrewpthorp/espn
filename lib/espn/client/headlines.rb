@@ -61,14 +61,9 @@ module ESPN
       # Returns an Array of Hashie::Mash.
       def headlines(*args)
         arguments = ESPN::Arguments.new(args, section: 'sports')
-
-        # Build URL
         pattern = arguments.options[:section]
         pattern += '/:sport/:league/news/headlines/:method/:id'
-        url = build_url(pattern, arguments.options)
-
-        # Make request
-        get(url, arguments.options).headlines
+        get(pattern, arguments.options).headlines
       end
 
     end

@@ -17,12 +17,8 @@ module ESPN
       #
       # Returns an Array of Hashie::Mash
       def now(opts={})
-        # Build URL
         pattern = 'now/:method'
-        url = build_url(pattern, opts)
-
-        # Make request
-        get(url, opts).feed
+        get(pattern, opts).feed
       end
 
     end

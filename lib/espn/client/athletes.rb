@@ -25,13 +25,8 @@ module ESPN
       # Returns a Hashie::Mash.
       def athlete(id, *args)
         arguments = ESPN::Arguments.new(args, {}, [:league])
-
-        # Build URL
         pattern = "sports/:sport/:league/athletes/#{id}"
-        url = build_url(pattern, arguments.options)
-
-        # Make request
-        get(url, arguments.options).sports.first.leagues.first.athletes.first
+        get(pattern, arguments.options).sports.first.leagues.first.athletes.first
       end
 
       # Public: Get athlete stats and information from the ESPN API.
@@ -48,13 +43,8 @@ module ESPN
       # Returns an Array of Hashie::Mash.
       def athletes(*args)
         arguments = ESPN::Arguments.new(args, {}, [:league])
-
-        # Build URL
         pattern = "sports/:sport/:league/athletes"
-        url = build_url(pattern, arguments.options)
-
-        # Make request
-        get(url, arguments.options).sports.first.leagues.first.athletes
+        get(pattern, arguments.options).sports.first.leagues.first.athletes
       end
 
     end

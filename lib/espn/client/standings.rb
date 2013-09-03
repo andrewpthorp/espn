@@ -24,13 +24,8 @@ module ESPN
       # Returns an Array of Hashie::Mash.
       def standings(*args)
         arguments = ESPN::Arguments.new(args, {}, [:league])
-
-        # Build URL
         pattern = 'sports/:sport/:league/standings'
-        url = build_url(pattern, arguments.options)
-
-        # Make request
-        get(url, arguments.options).sports.first.leagues.first.groups
+        get(pattern, arguments.options).sports.first.leagues.first.groups
       end
 
     end
