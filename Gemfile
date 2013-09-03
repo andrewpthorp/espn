@@ -4,6 +4,7 @@ gem 'rake'
 
 group :development do
   gem 'yard'
+  gem 'yard-tomdoc'
 end
 
 group :test do
