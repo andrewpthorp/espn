@@ -1,5 +1,4 @@
 require 'espn/helpers'
-require 'espn/mapper'
 require 'espn/request'
 require 'espn/client/athletes'
 require 'espn/client/audio'
@@ -72,7 +71,6 @@ module ESPN
       !api_key.nil?
     end
 
-    include ESPN::Mapper
     include ESPN::Request
     include ESPN::Helpers
     include ESPN::Client::Athletes
