@@ -14,8 +14,9 @@ module ESPN
     # Public: Initialize an instance of Arguments.
     #
     # args      - The Array of arguments passed into a method.
-    # defaults  - The Hash of default values for the options.
-    def initialize(args, defaults={}, required_fields=[])
+    # defaults  - The Hash of default values for the options (default: {}).
+    # required  - The Array of fields that are required (default: []).
+    def initialize(args, defaults={}, required=[])
       @options = args.last.is_a?(::Hash) ? args.pop : {}
 
       # Set defaults, only if the value in @options is nil.
@@ -26,7 +27,7 @@ module ESPN
         extract_sport_and_league(args, @options)
 
       # Validate required fields
-      required_fields.each do |field|
+      required.each do |field|
         if blank?(@options[field.to_sym])
           raise ArgumentError, "You must supply a valid #{field}."
         end
