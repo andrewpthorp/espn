@@ -9,12 +9,21 @@ describe ESPN do
   end
 
   describe '.method_missing' do
+    before do
+      @mock_espn = double('ESPN')
+      ESPN.stub(:new).and_return(@mock_espn)
+    end
+
     it 'should call super if ESPN::Client does not respond to the method' do
-      pending
+      @mock_espn.stub(:respond_to?).with(:to_s).and_return(false)
+      @mock_espn.should_not_receive(:to_s)
+      ESPN.to_s
     end
 
     it 'should send the method to a new ESPN::Client if it responds' do
-      pending
+      @mock_espn.stub(:respond_to?).with(:foobar).and_return(true)
+      @mock_espn.should_receive(:send).with(:foobar)
+      ESPN.foobar
     end
   end
 

@@ -1,0 +1,51 @@
+{
+    "sports": [{
+        "name": "baseball",
+        "id": 1,
+        "uid": "s:1",
+        "leagues": [{
+            "name": "Major League Baseball",
+            "abbreviation": "mlb",
+            "id": 10,
+            "uid": "s:1~l:10",
+            "groupId": 9,
+            "shortName": "MLB",
+            "athletes": [{
+                "id": 5383,
+                "firstName": "Chase",
+                "lastName": "Utley",
+                "fullName": "Chase Utley",
+                "displayName": "Chase Utley",
+                "shortName": "C. Utley",
+                "links": {
+                    "api": {
+                        "athletes": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/athletes/5383"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/athletes/5383/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/athletes/5383/news/notes"
+                        }
+                    },
+                    "web": {
+                        "athletes": {
+                            "href": "http://espn.go.com/mlb/player/_/id/5383/chase-utley?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "athletes": {
+                            "href": "http://m.espn.go.com/mlb/playercard?playerId=5383&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }]
+        }]
+    }],
+    "resultsOffset": 0,
+    "resultsLimit": 50,
+    "resultsCount": 1,
+    "timestamp": "2013-08-27T17:15:39Z",
+    "status": "success"
+}

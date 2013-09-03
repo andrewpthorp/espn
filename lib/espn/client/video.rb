@@ -1,5 +1,13 @@
 module ESPN
   class Client
+
+    # Public: The mapping to the VIDEO API of the ESPN developer API.
+    #
+    # Examples
+    #
+    #   class Client
+    #     include ESPN::Client::Video
+    #   end
     module Video
 
       # Public: Get video clip and channel information from ESPN.
@@ -9,20 +17,13 @@ module ESPN
       #       - :clip_id      - The id of the clip (default: nil).
       #
       # Returns an Array of Hashie::Mash.
-      def video(opts={})
-        url = 'video/channels'
+      def videos(opts={})
+        # Build URL
+        pattern = 'video/channels/:category_id/clips/:clip_id'
+        url = build_url(pattern, opts)
 
-        unless opts[:category_id].to_s.empty?
-          url += "/#{opts[:category_id]}"
-        end
-
-        url += '/clips'
-
-        unless opts[:clip_id].to_s.empty?
-          url += "/#{opts[:clip_id]}"
-        end
-
-        get(url, opts)
+        # Make request
+        get(url, opts).channels
       end
 
     end

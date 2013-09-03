@@ -1,35 +1,41 @@
 module ESPN
   class Client
+
+    # Public: The mapping to the AUDIO API of the ESPN developer API.
+    #
+    # Examples
+    #
+    #   class Client
+    #     include ESPN::Client::Audio
+    #   end
     module Audio
 
       # Public: Get audio podcasts and clips from ESPN.
       #
-      # opts  - Hash options used to refine the selection (default: {}).
-      #       - :method         - The name of the sport (default: 'podcasts').
-      #       - :podast_id      - The id of the podcast (default: nil).
-      #       - :recording_id   - The id of the recording (default: nil).
+      # opts    - Hash options used to refine the selection. If sport and/or
+      #           league are passed in, they will override the mapped values
+      #           You can find a full list of options on the ESPN developer API
+      #           website (default: {}).
+      #           - :method         - The name of the sport (default:
+      #                               'podcasts').
+      #           - :podcast_id     - The id of the podcast (default: nil).
+      #           - :recording_id   - The id of the recording (default: nil).
       #
       # Returns an Array of Hashie::Mash.
       def audio(opts={})
-        opts [:method] ||= 'podcasts'
+        opts[:method] ||= 'podcasts'
 
-        url = 'audio'
-
+        # Correct invalid method.
         if opts[:method] == 'podcast_recordings'
-          url += '/podcasts/recordings'
-        else
-          url += "/#{opts[:method]}"
+          opts[:method] = 'podcasts/recordings'
         end
 
-        unless opts[:podcast_id].to_s.empty?
-          url += "/#{opts[:podcast_id]}"
-        end
+        # Build URL
+        pattern = "audio/#{opts[:method]}/:podcast_id/:recording_id/"
+        url = build_url(pattern, opts)
 
-        unless opts[:recording_id].to_s.empty?
-          url += "/#{opts[:recording_id]}"
-        end
-
-        get(url, opts)
+        # Make request
+        get(url, opts).recordings
       end
 
     end

@@ -1,0 +1,101 @@
+{
+   "resultsCount":29,
+   "resultsOffset":0,
+   "resultsLimit":10,
+   "recordings":[
+      {
+         "id":8656148,
+         "published":"2012-11-20T17:27:56Z",
+         "premium":false,
+         "headline":"First Take",
+         "shortDescription":"",
+         "description":"Skip Bayless and Stephen A. Smith debate the Bears, the 49ers and Colin Kaepernick, Ed Reed hits, Steelers, Patriots and NFC East.",
+         "links":{
+            "api":{
+               "recordings":{
+                  "href":"http://api.espn.com/v1/audio/recordings/8656148"
+               }
+            },
+            "web":{
+               "href":"http://espn.go.com/espnradio/play?id=8656148&ex_cid=espnapi_internal"
+            },
+            "mobile":{
+               "href":"http://m.espn.go.com/general/play?id=8656148&ex_cid=espnapi_internal"
+            },
+            "source":{
+               "default":{
+                  "href":"http://c.espnradio.com/audio/1259102/firsttake_2012-11-20-122302.mp3"
+               },
+               "bitrate32k":{
+                  "href":"http://c.espnradio.com/audio/1259102/firsttake_2012-11-20-122302.32.mp3"
+               },
+               "bitrate48k":{
+                  "href":"http://c.espnradio.com/audio/1259102/firsttake_2012-11-20-122302.48.mp3"
+               },
+               "bitrate128k":{
+                  "href":"http://c.espnradio.com/audio/1259102/firsttake_2012-11-20-122302.128.mp3"
+               }
+            }
+         },
+         "thumbnails":{
+            "xsmall":{
+               "href":"http://a.espncdn.com/i/espnradio/stations/espn/podcasts/first_take_90.jpg",
+               "width":90,
+               "height":90
+            },
+            "small":{
+               "href":"http://a.espncdn.com/i/espnradio/stations/espn/podcasts/first_take_134.jpg",
+               "width":134,
+               "height":75
+            },
+            "large":{
+               "href":"http://a.espncdn.com/i/espnradio/stations/espn/podcasts/first_take_288.jpg",
+               "width":288,
+               "height":162
+            },
+            "medium":{
+               "href":"http://a.espncdn.com/i/espnradio/stations/espn/podcasts/first_take_203.jpg",
+               "width":203,
+               "height":114
+            },
+            "xlarge":{
+               "href":"http://a.espncdn.com/i/espnradio/stations/espn/podcasts/first_take_300.jpg",
+               "width":300,
+               "height":300
+            }
+         },
+         "categories":[
+            {
+               "podcastId":6247496,
+               "podcast":{
+                  "id":6247496,
+                  "description":"ESPN: First Take",
+                  "links":{
+                     "api":{
+                        "podcasts":{
+                           "href":"http://api.espn.com/v1/audio/podcasts/6247496"
+                        }
+                     },
+                     "web":{
+                        "href":"http://espn.go.com/espnradio/podcast/archive?id=6247496&ex_cid=espnapi_internal"
+                     },
+                     "mobile":{
+                        "href":"http://m.espn.go.com/general/cast?id=6247496&ex_cid=espnapi_internal"
+                     }
+                  }
+               },
+               "description":"ESPN: First Take",
+               "type":"podcast"
+            }
+         ],
+         "keywords":[
+            "1st and 10",
+            "first take",
+            "Skip Bayless",
+            "Stephen A. Smith"
+         ]
+      }
+   ],
+   "timestamp":"2012-11-21T17:21:21Z",
+   "status":"success"
+}

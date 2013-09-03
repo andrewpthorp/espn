@@ -1,0 +1,100 @@
+{
+   "timestamp":"2012-11-21T16:40:18Z",
+   "resultsOffset":0,
+   "status":"success",
+   "resultsLimit":5,
+   "resultsCount":768,
+   "notes":[
+      {
+         "headline":"Cowboys Great Against Rookie QBs on Thanksgiving",
+         "id":8659824,
+         "text":"From Elias: The Cowboys are 3-0 against rookie quarterbacks on Thanksgiving. In 2006, they beat Bruce Gradkowski (TB). In 2004, they beat Craig Krenzel (CHI). And in 1992, they beat Kent Graham (NYG).",
+         "source":"ESPN Stats and Information",
+         "categories":[
+            {
+               "description":"NFL",
+               "type":"league",
+               "sportId":28,
+               "leagueId":28,
+               "league":{
+                  "id":28,
+                  "description":"NFL",
+                  "links":{
+                     "api":{
+                        "leagues":{
+                           "href":"http://api.espn.com/v1/sports/football/nfl"
+                        }
+                     },
+                     "web":{
+                        "leagues":{
+                           "href":"http://espn.go.com/nfl/?ex_cid=espnapi_internal"
+                        }
+                     },
+                     "mobile":{
+                        "leagues":{
+                           "href":"http://m.espn.go.com/nfl/?ex_cid=espnapi_internal"
+                        }
+                     }
+                  }
+               }
+            },
+            {
+               "description":"Dallas Cowboys",
+               "type":"team",
+               "sportId":28,
+               "teamId":6,
+               "team":{
+                  "id":6,
+                  "description":"Dallas Cowboys",
+                  "links":{
+                     "api":{
+                        "teams":{
+                           "href":"http://api.espn.com/v1/sports/football/nfl/teams/6"
+                        }
+                     },
+                     "web":{
+                        "teams":{
+                           "href":"http://espn.go.com/nfl/team/_/name/dal/dallas-cowboys?ex_cid=espnapi_internal"
+                        }
+                     },
+                     "mobile":{
+                        "teams":{
+                           "href":"http://m.espn.go.com/nfl/clubhouse?teamId=6&ex_cid=espnapi_internal"
+                        }
+                     }
+                  }
+               }
+            },
+            {
+               "description":"Robert Griffin III",
+               "type":"athlete",
+               "sportId":28,
+               "athleteId":14875,
+               "athlete":{
+                  "id":14875,
+                  "description":"Robert Griffin III",
+                  "links":{
+                     "api":{
+                        "athletes":{
+                           "href":"http://api.espn.com/v1/sports/football/nfl/athletes/14875"
+                        }
+                     },
+                     "web":{
+                        "athletes":{
+                           "href":"http://espn.go.com/nfl/player/_/id/14875/robert-griffin-iii?ex_cid=espnapi_internal"
+                        }
+                     },
+                     "mobile":{
+                        "athletes":{
+                           "href":"http://m.espn.go.com/nfl/playercard?playerId=14875&ex_cid=espnapi_internal"
+                        }
+                     }
+                  }
+               }
+            }
+         ],
+         "date":"2012-11-21T16:31:59Z",
+         "type":"research"
+      }
+   ]
+}

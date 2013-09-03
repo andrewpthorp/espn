@@ -1,0 +1,28 @@
+{
+  "resultsCount":29,
+  "resultsOffset":0,
+  "resultsLimit":10,
+  "channels":[
+    {
+      "id": 1234567,
+      "name": "This is a video channel.",
+      "description": "This is the description of a video channel.",
+      "videos":[
+        {
+          "id": 920,
+          "headline": "Some video headline.",
+          "shortHeadline": "Some headline.",
+          "description": "Some video description.",
+          "shortDescription": "Some description.",
+          "premium": false,
+          "ad":{
+            "sport": "baseball",
+            "bundle": "1234"
+          },
+          "originalPublishDate": "2013-11-22T14:22:15Z",
+          "lastModified": "2013-11-22T14:22:15Z"
+        }
+      ]
+    }
+  ]
+}
