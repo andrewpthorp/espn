@@ -14,8 +14,29 @@ module ESPN
   module Configuration
 
     # Public: Array of all configuration options for an ESPN::Client.
-    VALID_OPTIONS_KEYS = [:adapter, :api_version, :proxy, :api_key, :timeout,
+    VALID_OPTIONS_KEYS = [:adapter, :api_version, :api_key, :proxy, :timeout,
                           :open_timeout, :user_agent].freeze
+
+    # Public: Gets/Sets the Symbol adapter.
+    attr_accessor :adapter
+
+    # Public: Gets/Sets the Fixnum api version.
+    attr_accessor :api_version
+
+    # Public: Gets/Sets the String api key.
+    attr_accessor :api_key
+
+    # Public: Gets/Sets the Fixnum open timeout.
+    attr_accessor :open_timeout
+
+    # Public: Gets/Sets the String proxy.
+    attr_accessor :proxy
+
+    # Public: Gets/Sets the Fixnum timeout.
+    attr_accessor :timeout
+
+    # Public: Gets/Sets the String user agent.
+    attr_accessor :user_agent
 
     # Public: The default adapter used for requests.
     DEFAULT_ADAPTER         = Faraday.default_adapter
@@ -28,10 +49,6 @@ module ESPN
 
     # Public: The default timeout for HTTP Requests.
     DEFAULT_TIMEOUT         = 10
-
-    # Public: Create an attr_accessor for each VALID_OPTIONS_KEYS when this
-    # module is extended into another.
-    attr_accessor(*VALID_OPTIONS_KEYS)
 
     # Internal: Hook when this module is extended in another, we call #reset.
     #
@@ -64,13 +81,13 @@ module ESPN
     #
     # Returns nothing.
     def reset
-      self.adapter                = DEFAULT_ADAPTER
-      self.api_version            = DEFAULT_API_VERSION
-      self.user_agent             = DEFAULT_USER_AGENT
-      self.timeout                = DEFAULT_TIMEOUT
-      self.open_timeout           = DEFAULT_TIMEOUT
-      self.api_key                = nil
-      self.proxy                  = nil
+      self.adapter        = DEFAULT_ADAPTER
+      self.api_version    = DEFAULT_API_VERSION
+      self.user_agent     = DEFAULT_USER_AGENT
+      self.timeout        = DEFAULT_TIMEOUT
+      self.open_timeout   = DEFAULT_TIMEOUT
+      self.api_key        = nil
+      self.proxy          = nil
     end
   end
 end

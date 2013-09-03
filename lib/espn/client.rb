@@ -24,8 +24,26 @@ module ESPN
   #   # => ESPN::Client
   class Client
 
-    # Public: An attr_accessor for each configuration option.
-    attr_accessor(*Configuration::VALID_OPTIONS_KEYS)
+    # Public: Gets/Sets the Symbol adapter.
+    attr_accessor :adapter
+
+    # Public: Gets/Sets the Fixnum api version.
+    attr_accessor :api_version
+
+    # Public: Gets/Sets the String api key.
+    attr_accessor :api_key
+
+    # Public: Gets/Sets the Fixnum open timeout.
+    attr_accessor :open_timeout
+
+    # Public: Gets/Sets the String proxy.
+    attr_accessor :proxy
+
+    # Public: Gets/Sets the Fixnum timeout.
+    attr_accessor :timeout
+
+    # Public: Gets/Sets the String user agent.
+    attr_accessor :user_agent
 
     # Public: Initialize a new Client. To see all options that can be
     # configured, look at the Configuration module, specifically
