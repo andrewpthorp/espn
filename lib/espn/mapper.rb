@@ -122,17 +122,17 @@ module ESPN
 
       if args.size == 1 && league?(args[0])
         map = map_league_to_sport(args[0])
-        sport ||= map[:sport]
-        league ||= map[:league]
+        sport ||= map[:sport].to_s
+        league ||= map[:league].to_s
       elsif args.size == 1 && sport?(args[0])
-        sport ||= args[0]
+        sport ||= args[0].to_s
         league ||= ''
       elsif !opts[:league].to_s.empty?
         map = map_league_to_sport(opts[:league])
-        sport ||= map[:sport]
+        sport ||= map[:sport].to_s
       else
-        sport ||= args[0] || ''
-        league ||= args[1] || ''
+        sport ||= args[0].to_s || ''
+        league ||= args[1].to_s || ''
       end
 
       return sport, league
