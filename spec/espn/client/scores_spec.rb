@@ -6,6 +6,17 @@ describe ESPN::Client::Scores do
     stub_get 'scores.json'
   end
 
+  describe '#score' do
+    it 'should return an event' do
+      @client.score(1).competitions.is_a?(Array).should be_true
+    end
+
+    it 'should request the specific event' do
+      @client.score(1)
+      assert_requested :get, espn_url('sports/events/1')
+    end
+  end
+
   describe '#scores' do
     it 'returns an array of events with scores' do
       @client.scores.first.respond_to?(:competitions).should be_true
@@ -59,13 +70,6 @@ describe ESPN::Client::Scores do
           @client.scores(sport: 'baseball')
           assert_requested :get, espn_url('sports/baseball/events')
         end
-
-        context 'with an id param' do
-          it 'should include the sport and id params in the request' do
-            @client.scores(sport: 'baseball', id: 5)
-            assert_requested :get, espn_url('sports/baseball/events/5')
-          end
-        end
       end
 
       context 'with a sport and a league param' do
@@ -73,33 +77,12 @@ describe ESPN::Client::Scores do
           @client.scores(sport: 'baseball', league: 'mlb')
           assert_requested :get, espn_url('sports/baseball/mlb/events')
         end
-
-        context 'with an id param' do
-          it 'should include the sport, league and id params' do
-            @client.scores(sport: 'baseball', league: 'mlb', id: 1)
-            assert_requested :get, espn_url('sports/baseball/mlb/events/1')
-          end
-        end
-      end
-
-      context 'with an id param' do
-        it 'should include the id in the request' do
-          @client.scores(id: 5)
-          assert_requested :get, espn_url('sports/events/5')
-        end
       end
 
       context 'with a league param and no sport param' do
         it 'should map the league to a sport' do
           @client.scores(league: 'mlb')
           assert_requested :get, espn_url('sports/baseball/mlb/events')
-        end
-
-        context 'with an id param' do
-          it 'should include the id in the request' do
-            @client.scores(league: 'mlb', id: 2)
-            assert_requested :get, espn_url('sports/baseball/mlb/events/2')
-          end
         end
       end
     end

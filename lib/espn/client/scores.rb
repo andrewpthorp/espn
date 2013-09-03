@@ -11,6 +11,17 @@ module ESPN
     #   end
     module Scores
 
+      # Public: Get the score for a specific event from the ESPN API.
+      #
+      # id    - The id of an event to get the scores for.
+      # opts  - Hash options used to refine the selection. You can find a full
+      #         list of options on the ESPN developer API website (default: {}).
+      #
+      # Returns a Hashie::Mash.
+      def score(id, opts={})
+        get("sports/events/#{id}", opts).sports.first.leagues.first.events.first
+      end
+
       # Public: Get schedule and scores information from the ESPN API.
       #
       # sport   - A Symbol or String of the sport (optional).
