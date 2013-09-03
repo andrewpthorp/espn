@@ -52,4 +52,23 @@ describe ESPN::Request do
     end
   end
 
+  describe '#blank?' do
+    it 'should be true for an empty string' do
+      @client.blank?('').should be_true
+    end
+
+    it 'should be false for a non empty string' do
+      @client.blank?('foo').should be_false
+    end
+
+    it 'should be true for a nil object' do
+      @client.blank?(nil).should be_true
+    end
+
+    it 'should be false for a non nil object' do
+      @client.blank?(Object.new).should be_false
+    end
+  end
+
+
 end

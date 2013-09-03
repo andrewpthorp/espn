@@ -27,8 +27,8 @@ module ESPN
         opts = extract_options_with_defaults!(args)
         opts[:sport], opts[:league] = extract_sport_and_league(args, opts)
 
-        if opts[:league].to_s.empty?
-          raise ArgumentError, 'You must supply a valid league.'
+        if blank?(opts[:league])
+          raise ArgumentError, 'You must provide a valid league.'
         end
 
         # Build URL
