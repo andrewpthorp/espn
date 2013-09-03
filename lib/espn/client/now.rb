@@ -13,7 +13,7 @@ module ESPN
       # Public: Get stream of the latest content published on ESPN.com.
       #
       # opts  - Hash options used to refine the selection (default: {}).
-      #       - :method   - The type of content to retrieve (default: nil).
+      #         :method - The type of content to retrieve (default: nil).
       #
       # Returns an Array of Hashie::Mash
       def now(opts={})

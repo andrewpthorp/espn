@@ -21,7 +21,7 @@ module ESPN
       #           league are passed in, they will override the mapped values
       #           You can find a full list of options on the ESPN developer API
       #           website (default: {}).
-      #           - :id - The id of a specific note (default: nil, optional).
+      #           :id - The id of a specific note (default: nil, optional).
       #
       # Returns an Array of Hashie::Mash.
       def notes(*args)

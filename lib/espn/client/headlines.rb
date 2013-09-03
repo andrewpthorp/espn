@@ -36,10 +36,10 @@ module ESPN
       #           league are passed in, they will override the mapped values
       #           You can find a full list of options on the ESPN developer API
       #           website (default: {}).
-      #           - :section  - The news section (default: 'sports').
-      #           - :sport    - Name of the sport (default: nil, optional).
-      #           - :league   - Name of the league (default: nil, optional).
-      #           - :method   - Method of headlines (default: nil, optional).
+      #           :section  - The news section (default: 'sports').
+      #           :sport    - Name of the sport (default: nil, optional).
+      #           :league   - Name of the league (default: nil, optional).
+      #           :method   - Method of headlines (default: nil, optional).
       #
       # Examples
       #

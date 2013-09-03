@@ -16,10 +16,9 @@ module ESPN
       #           league are passed in, they will override the mapped values
       #           You can find a full list of options on the ESPN developer API
       #           website (default: {}).
-      #           - :method         - The name of the sport (default:
-      #                               'podcasts').
-      #           - :podcast_id     - The id of the podcast (default: nil).
-      #           - :recording_id   - The id of the recording (default: nil).
+      #           :method       - The name of the sport (default: 'podcasts').
+      #           :podcast_id   - The id of the podcast (default: nil).
+      #           :recording_id - The id of the recording (default: nil).
       #
       # Returns an Array of Hashie::Mash.
       def audio(opts={})
