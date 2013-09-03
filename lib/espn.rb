@@ -1,6 +1,7 @@
 require 'espn/configuration'
 require 'espn/client'
 require 'espn/error'
+require 'espn/arguments'
 require 'uri_template'
 
 # Public: The ESPN Module that all other modules and classes will be a part of.
