@@ -21,8 +21,6 @@ module ESPN
       #           - :podcast_id     - The id of the podcast (default: nil).
       #           - :recording_id   - The id of the recording (default: nil).
       #
-      # Examples
-      #
       # Returns an Array of Hashie::Mash.
       def audio(opts={})
         opts[:method] ||= 'podcasts'
