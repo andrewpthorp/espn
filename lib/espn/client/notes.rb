@@ -10,6 +10,17 @@ module ESPN
     #   end
     module Notes
 
+      # Public: Get a specific note from the ESPN developer API.
+      #
+      # id    - The id of a specific note.
+      # opts  - Hash options used to refine the selection. You can find a full
+      #         list of options on the ESPN developer API website (default: {}).
+      #
+      # Returns a Hashie::Mash.
+      def note(id, opts={})
+        get("sports/news/notes/#{id}", opts).notes.first
+      end
+
       # Public: Get Exclusive factoids produced by ESPN's Stats and Information
       # Group from the ESPN API.
       #
@@ -21,7 +32,6 @@ module ESPN
       #           league are passed in, they will override the mapped values
       #           You can find a full list of options on the ESPN developer API
       #           website (default: {}).
-      #           :id - The id of a specific note (default: nil, optional).
       #
       # Returns an Array of Hashie::Mash.
       def notes(*args)
@@ -30,7 +40,7 @@ module ESPN
         opts[:sport], opts[:league] = extract_sport_and_league(args, opts)
 
         # Build URL
-        pattern = "sports/:sport/:league/news/notes/:id"
+        pattern = "sports/:sport/:league/news/notes"
         url = build_url(pattern, opts)
 
         # Make request

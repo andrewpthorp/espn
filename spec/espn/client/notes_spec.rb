@@ -6,6 +6,17 @@ describe ESPN::Client::Notes do
     stub_get 'notes.json'
   end
 
+  describe '#note' do
+    it 'should return a note' do
+      @client.note(1).headline.should eq('Cowboys Stink')
+    end
+
+    it 'should include the id in the request' do
+      @client.note(1)
+      assert_requested :get, espn_url('sports/news/notes/1')
+    end
+  end
+
   describe '#notes' do
     it 'should return an array of notes' do
       @client.notes.first.respond_to?(:headline).should be_true
@@ -50,13 +61,6 @@ describe ESPN::Client::Notes do
           @client.notes('wnba', league: 'mlb')
           assert_requested :get, espn_url('sports/basketball/mlb/news/notes')
         end
-      end
-    end
-
-    context 'with an id in the opts hash' do
-      it 'should request that specific note' do
-        @client.notes(id: 5)
-        assert_requested :get, espn_url('sports/news/notes/5')
       end
     end
   end
