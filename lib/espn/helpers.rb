@@ -17,6 +17,17 @@ module ESPN
     # args      - The Array that we want to pop the Hash off of.
     # defaults  - Hash that sets default values if they don't exist.
     #
+    # Examples
+    #
+    #   extract_options_with_defaults!([{ foo: 'bar' }])
+    #   # => { foo: 'bar' }
+    #
+    #   extract_options_with_defaults!([], foo: 'default')
+    #   # => { foo: 'default' }
+    #
+    #   extract_options_with_defaults!([{ foo: 'bar' }], foo: 'default')
+    #   # => { foo: 'bar' }
+    #
     # Returns a Hash.
     def extract_options_with_defaults!(args, defaults={})
       options = {}

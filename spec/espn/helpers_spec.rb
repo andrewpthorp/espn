@@ -16,7 +16,7 @@ describe ESPN::Request do
         @client.extract_options_with_defaults!(@args).should eq(@opts)
       end
 
-      it 'should remove that has from the array' do
+      it 'should remove that hash from the array' do
         size = @args.size
         @client.extract_options_with_defaults!(@args)
         @args.size.should == size-1
