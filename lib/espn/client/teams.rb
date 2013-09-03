@@ -24,20 +24,18 @@ module ESPN
       #
       # Returns a Hashie::Mash.
       def team(id, *args)
-        # Build fragments and options
-        opts = extract_options_with_defaults!(args)
-        opts[:sport], opts[:league] = extract_sport_and_league(args, opts)
+        arguments = ESPN::Arguments.new(args)
 
-        if blank?(opts[:league])
+        if blank?(arguments.options[:league])
           raise ArgumentError, 'You must provide a valid league.'
         end
 
         # Build URL
         pattern = "sports/:sport/:league/teams/#{id}"
-        url = build_url(pattern, opts)
+        url = build_url(pattern, arguments.options)
 
         # Make request
-        get(url, opts).sports.first.leagues.first.teams.first
+        get(url, arguments.options).sports.first.leagues.first.teams.first
       end
 
       # Public: Get sport team stats and information from the ESPN API.
@@ -53,20 +51,18 @@ module ESPN
       #
       # Returns an Array of Hashie::Mash.
       def teams(*args)
-        # Build fragments and options
-        opts = extract_options_with_defaults!(args)
-        opts[:sport], opts[:league] = extract_sport_and_league(args, opts)
+        arguments = ESPN::Arguments.new(args)
 
-        if blank?(opts[:league])
+        if blank?(arguments.options[:league])
           raise ArgumentError, 'You must provide a valid league.'
         end
 
         # Build URL
         pattern = 'sports/:sport/:league/teams'
-        url = build_url(pattern, opts)
+        url = build_url(pattern, arguments.options)
 
         # Make request
-        get(url, opts).sports.first.leagues.first.teams
+        get(url, arguments.options).sports.first.leagues.first.teams
       end
 
     end

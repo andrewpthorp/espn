@@ -23,20 +23,18 @@ module ESPN
       #
       # Returns an Array of Hashie::Mash.
       def standings(*args)
-        # Build fragments and options
-        opts = extract_options_with_defaults!(args)
-        opts[:sport], opts[:league] = extract_sport_and_league(args, opts)
+        arguments = ESPN::Arguments.new(args)
 
-        if blank?(opts[:league])
+        if blank?(arguments.options[:league])
           raise ArgumentError, 'You must provide a valid league.'
         end
 
         # Build URL
         pattern = 'sports/:sport/:league/standings'
-        url = build_url(pattern, opts)
+        url = build_url(pattern, arguments.options)
 
         # Make request
-        get(url, opts).sports.first.leagues.first.groups
+        get(url, arguments.options).sports.first.leagues.first.groups
       end
 
     end
