@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>espn by andrewpthorp</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">espn</h1>
+        <p class="header">Ruby wrapper for the ESPN API - http://developer.espn.com/</p>
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/andrewpthorp/espn/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/andrewpthorp/espn/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/andrewpthorp/espn">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/andrewpthorp">andrewpthorp</a></p>
+
+
+      </header>
+      <section>
+        <h1>
+<a name="espn" class="anchor" href="#espn"><span class="octicon octicon-link"></span></a>ESPN</h1>
+
+<p>Simply Ruby Wrapper for the ESPN Developer API.</p>
+
+<h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<pre><code>gem install espn
+</code></pre>
+
+<h2>
+<a name="examples" class="anchor" href="#examples"><span class="octicon octicon-link"></span></a>Examples</h2>
+
+<p>First, setup your client:</p>
+
+<pre><code>client = ESPN::Client.new(api_key: 'your_api_key_here')
+</code></pre>
+
+<p>Next, make calls against the ESPN API.</p>
+
+<h3>
+<a name="sports" class="anchor" href="#sports"><span class="octicon octicon-link"></span></a>Sports</h3>
+
+<p>The Sports API is what they call a 'Helper' API. This allows you to pull out data for different sections of the API. The Sports API is not documented, but you can see how it works on their <a href="http://developer.espn.com/io-docs">API explorer.</a></p>
+
+<pre><code>client.sports(:mlb)
+# =&gt; [#&lt;Hashie::Mash name="baseball"...&gt;]
+</code></pre>
+
+<h3>
+<a name="athletes" class="anchor" href="#athletes"><span class="octicon octicon-link"></span></a>Athletes</h3>
+
+<p>For more information about the Athletes API, <a href="http://developer.espn.com/docs/athletes">view the documentation.</a></p>
+
+<pre><code>client.athletes(:mlb)
+# =&gt; [#&lt;Hashie::Mash fullName="Chase Utley"...&gt;]
+
+client.athlete(12345, :nfl).fullName
+# =&gt; #&lt;Hashie::Mash fullName="LeSean McCoy"...&gt;
+</code></pre>
+
+<h3>
+<a name="audio" class="anchor" href="#audio"><span class="octicon octicon-link"></span></a>Audio</h3>
+
+<p>For more information about the Audio API, <a href="http://developer.espn.com/docs/audio">view the documentation.</a></p>
+
+<pre><code>client.audio(podcast_id: 5)
+# =&gt; [#&lt;Hashie::Mash id=8656148 premium=false description=...&gt;]
+</code></pre>
+
+<h3>
+<a name="espn-now" class="anchor" href="#espn-now"><span class="octicon octicon-link"></span></a>ESPN Now</h3>
+
+<p>For more information about the ESPN NOW API, <a href="http://developer.espn.com/docs/now">view the documentation.</a></p>
+
+<pre><code>client.now
+# =&gt; [#&lt;Hashie::Mash headline="Halladay's future"...&gt;]
+</code></pre>
+
+<h3>
+<a name="headlines" class="anchor" href="#headlines"><span class="octicon octicon-link"></span></a>Headlines</h3>
+
+<p>For more information about the Headlines API, <a href="http://developer.espn.com/docs/headlines">view the documentation.</a></p>
+
+<pre><code>client.headlines(:mlb)
+# =&gt; [#&lt;Hashie::Mash headline="Ronnie Brewer has deal with Rockets"...&gt;]
+
+client.headline(12345, :nfl)
+# =&gt; #&lt;Hashie::Mash headline="Eagles won't be good this year"...&gt;
+</code></pre>
+
+<h3>
+<a name="medals" class="anchor" href="#medals"><span class="octicon octicon-link"></span></a>Medals</h3>
+
+<p>For more information about the Medals API, <a href="http://developer.espn.com/docs/medals">view the documentation.</a></p>
+
+<pre><code>client.medals
+# =&gt; #&lt;Hashie::Mash season=#&lt;Hashie::Mash...&gt; sports=[] competitors=[]...&gt;
+</code></pre>
+
+<h3>
+<a name="research-notes" class="anchor" href="#research-notes"><span class="octicon octicon-link"></span></a>Research Notes</h3>
+
+<p>For more information about the Resarch Notes API, <a href="http://developer.espn.com/docs/research">view the documentation.</a></p>
+
+<pre><code>client.notes
+# =&gt; [#&lt;Hashie::Mash headline="Cowboys Stink"...&gt;]
+
+client.note(8659824)
+# =&gt; #&lt;Hashie::Mash headline="Cowboys Stink"...&gt;
+</code></pre>
+
+<h3>
+<a name="scores--schedules" class="anchor" href="#scores--schedules"><span class="octicon octicon-link"></span></a>Scores &amp; Schedules</h3>
+
+<p>For more information about the Scores &amp; Schedules API, <a href="http://developer.espn.com/docs/scores">view the documentation.</a></p>
+
+<pre><code>client.scores(:mlb)
+# =&gt; [#&lt;Hashie::Mash competitions=[#&lt;Hashie::Mash competitors=[]...]...&gt;]
+
+client.score(12345)
+# =&gt; #&lt;Hashie::Mash competitions=[#&lt;Hashie::Mash competitors=[]...]...&gt;
+</code></pre>
+
+<h3>
+<a name="standings" class="anchor" href="#standings"><span class="octicon octicon-link"></span></a>Standings</h3>
+
+<p>For more information about the Standings API, <a href="http://developer.espn.com/docs/standings">view the documentation.</a></p>
+
+<pre><code>client.standings(:nba)
+# =&gt; [#&lt;Hashie::Mash name="Eastern" groups=[]...&gt;]
+</code></pre>
+
+<h3>
+<a name="teams" class="anchor" href="#teams"><span class="octicon octicon-link"></span></a>Teams</h3>
+
+<p>For more information about the Teams API, <a href="http://developer.espn.com/docs/teams">view the documentation.</a></p>
+
+<pre><code>client.teams(:mlb)
+# =&gt; [#&lt;Hashie::Mash name="Phillies"...&gt;]
+
+client.team(12345, :nfl)
+# =&gt; #&lt;Hashie::Mash name="Eagles"...&gt;
+</code></pre>
+
+<h3>
+<a name="video" class="anchor" href="#video"><span class="octicon octicon-link"></span></a>Video</h3>
+
+<p>For more information about the Video API, <a href="http://developer.espn.com/docs/video">view the documentation.</a></p>
+
+<pre><code>client.videos
+# =&gt; [#&lt;Hashie::Mash name="Video Channel" videos=[]...&gt;]
+</code></pre>
+
+<h2>
+<a name="more-information" class="anchor" href="#more-information"><span class="octicon octicon-link"></span></a>More Information</h2>
+
+<p>This is a Ruby Wrapper around the ESPN developer API. If you want to see how their API works, you can <a href="http://developer.espn.com/overview">visit their developer center.</a></p>
+
+<h2>
+<a name="inspiration" class="anchor" href="#inspiration"><span class="octicon octicon-link"></span></a>Inspiration</h2>
+
+<p>A ton of inspiration was taken from <a href="http://github.com/octokit/octokit.rb">Octokit</a>. Thanks to those guys for
+showing the world how API Wrappers should work.</p>
+
+<h2>
+<a name="copyright" class="anchor" href="#copyright"><span class="octicon octicon-link"></span></a>Copyright</h2>
+
+<p>Copyright (c) 2013 Andrew Thorp. See <a href="LICENSE.md">LICENSE</a> for details.</p>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
+  </body>
+</html>
