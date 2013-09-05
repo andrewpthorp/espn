@@ -11,6 +11,14 @@ describe ESPN::Client::Now do
     assert_requested :get, espn_url('now')
   end
 
+  it 'should return a feed' do
+    @client.now.feed.first.headline.should eq("Halladay's future")
+  end
+
+  it 'should return breaking news' do
+    @client.now.respond_to?(:breakingNews).should be_true
+  end
+
   context 'with a method param' do
     it 'should include the method in the request' do
       @client.now(method: 'popular')
