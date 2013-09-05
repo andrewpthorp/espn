@@ -24,9 +24,9 @@ module ESPN
       #
       # Returns a Hashie::Mash.
       def team(id, *args)
-        arguments = ESPN::Arguments.new(args, {}, [:league])
+        args = ESPN::Arguments.new(args, {}, [:league])
         pattern = "sports/:sport/:league/teams/#{id}"
-        get(pattern, arguments.options).sports.first.leagues.first.teams.first
+        get(pattern, args.options).sports.first.leagues.first.teams.first
       end
 
       # Public: Get sport team stats and information from the ESPN API.
@@ -42,9 +42,9 @@ module ESPN
       #
       # Returns an Array of Hashie::Mash.
       def teams(*args)
-        arguments = ESPN::Arguments.new(args, {}, [:league])
+        args = ESPN::Arguments.new(args, {}, [:league])
         pattern = 'sports/:sport/:league/teams'
-        get(pattern, arguments.options).sports.first.leagues.first.teams
+        get(pattern, args.options).sports.first.leagues.first.teams
       end
 
     end

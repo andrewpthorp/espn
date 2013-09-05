@@ -36,9 +36,9 @@ module ESPN
       #
       # Returns an Array of Hashie::Mash.
       def scores(*args)
-        arguments = ESPN::Arguments.new(args)
+        args = ESPN::Arguments.new(args)
         pattern = 'sports/:sport/:league/events/:id'
-        get(pattern, arguments.options).sports.first.leagues.first.events
+        get(pattern, args.options).sports.first.leagues.first.events
       end
 
     end
