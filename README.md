@@ -1,3 +1,5 @@
+# On December 8th, 2014, the ESPN API will no longer be active. You can read more about this in their [announcement](http://developer.espn.com/blog/read/publicretirement).
+
 # ESPN
 
 Simply Ruby Wrapper for the ESPN Developer API.
